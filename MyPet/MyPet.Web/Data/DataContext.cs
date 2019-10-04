@@ -1,0 +1,20 @@
+﻿using Microsoft.EntityFrameworkCore;
+using MyPet.Web.Data.Entities;
+
+namespace MyPet.Web.Data
+{
+    public class DataContext : DbContext
+    {
+        public DataContext(DbContextOptions<DataContext> options) : base(options)
+        {
+        }
+
+        public DbSet<TemporaryOwner> TemporaryOwners { get; set; }
+        public DbSet<Adopter> Adopters { get; set; }
+        public DbSet<Pet> Pets { get; set; }
+        public DbSet<PetImage> PetImages { get; set; }
+        public DbSet<PetType> PetTypes { get; set; }
+        public DbSet<Race> Races { get; set; }
+        public DbSet<Request> Requests { get; set; }
+    }
+}
