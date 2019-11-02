@@ -15,20 +15,22 @@ namespace MyPet.Web.Data.Entities
 
         public string Name { get; set; }
 
-        
-        [Display(Name= "Aproximated Age")]
+
+        [Display(Name = "Aproximated Age")]
         public int Age { get; set; }
 
         public string Description { get; set; }
+
+        public string Race { get; set; }
+
+        public string ImageUrl { get; set; }
 
         [Display(Name = "Is Available?")]
         public bool IsAvailable { get; set; }
 
         public PetType PetType { get; set; }
 
-        public PetImage PetImage { get; set; }
-
-        public Race Race { get; set; }
+        
 
         public ICollection<Request> Requests { get; set; }
 

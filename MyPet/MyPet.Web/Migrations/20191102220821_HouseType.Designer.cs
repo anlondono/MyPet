@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyPet.Web.Data;
 
 namespace MyPet.Web.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20191102220821_HouseType")]
+    partial class HouseType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -75,27 +77,48 @@ namespace MyPet.Web.Migrations
 
                     b.Property<string>("Description");
 
-                    b.Property<string>("ImageUrl");
-
                     b.Property<bool>("IsAvailable");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(20);
 
+                    b.Property<int?>("PetImageId");
+
                     b.Property<int?>("PetTypeId");
 
-                    b.Property<string>("Race");
+                    b.Property<int?>("RaceId");
 
                     b.Property<int?>("TemporaryOwnerId");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("PetImageId");
+
                     b.HasIndex("PetTypeId");
+
+                    b.HasIndex("RaceId");
 
                     b.HasIndex("TemporaryOwnerId");
 
                     b.ToTable("Pets");
+                });
+
+            modelBuilder.Entity("MyPet.Web.Data.Entities.PetImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ImageUrl");
+
+                    b.Property<int?>("PetImageId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PetImageId");
+
+                    b.ToTable("PetImages");
                 });
 
             modelBuilder.Entity("MyPet.Web.Data.Entities.PetType", b =>
@@ -113,19 +136,30 @@ namespace MyPet.Web.Migrations
                     b.ToTable("PetTypes");
                 });
 
+            modelBuilder.Entity("MyPet.Web.Data.Entities.Race", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(20);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Races");
+                });
+
             modelBuilder.Entity("MyPet.Web.Data.Entities.Request", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<bool>("Active");
-
                     b.Property<int?>("AdopterId");
 
                     b.Property<DateTime>("Date");
-
-                    b.Property<bool>("Denied");
 
                     b.Property<bool>("HasKids");
 
@@ -183,13 +217,28 @@ namespace MyPet.Web.Migrations
 
             modelBuilder.Entity("MyPet.Web.Data.Entities.Pet", b =>
                 {
+                    b.HasOne("MyPet.Web.Data.Entities.PetImage", "PetImage")
+                        .WithMany()
+                        .HasForeignKey("PetImageId");
+
                     b.HasOne("MyPet.Web.Data.Entities.PetType", "PetType")
                         .WithMany()
                         .HasForeignKey("PetTypeId");
 
+                    b.HasOne("MyPet.Web.Data.Entities.Race", "Race")
+                        .WithMany("Pets")
+                        .HasForeignKey("RaceId");
+
                     b.HasOne("MyPet.Web.Data.Entities.TemporaryOwner", "TemporaryOwner")
                         .WithMany("Pets")
                         .HasForeignKey("TemporaryOwnerId");
+                });
+
+            modelBuilder.Entity("MyPet.Web.Data.Entities.PetImage", b =>
+                {
+                    b.HasOne("MyPet.Web.Data.Entities.PetImage")
+                        .WithMany("PetImages")
+                        .HasForeignKey("PetImageId");
                 });
 
             modelBuilder.Entity("MyPet.Web.Data.Entities.Request", b =>
