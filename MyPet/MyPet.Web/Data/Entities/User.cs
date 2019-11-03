@@ -32,6 +32,10 @@ namespace MyPet.Web.Data.Entities
         [Display(Name = "Cell Phone")]
         public string CellPhone { get; set; }
 
+        public bool IsOwner { get; set; }
+
+        public bool IsAdopter { get; set; }
+
         [Display(Name = "Full Name")]
         public string FullName => $"{FirstName} {LastName}";
 

@@ -26,8 +26,8 @@ namespace MyPet.Web.Data
             await CheckPetsAsync();
             await AddHouseType();
             var manager = await CheckUserAsync("1010", "Juan", "Pruebas", "super@gmail.com", "350 634 2747", "Calle Luna Calle Sol", "Admin");
-            var owner = await CheckUserAsync("2020", "Dueño", "Pruebas", "owner@yopmail.com", "350 634 2747", "Calle Luna Calle Sol", "Owner");
-            var adopter = await CheckUserAsync("3030", "Adoptante", "Pruebas", "adoptante@gmail.com", "350 634 2747", "Calle Luna Calle Sol", "Adopter");
+            var owner = await CheckUserAsync("2020", "Dueño", "Pruebas", "owner@yopmail.com", "350 634 2747", "Calle Luna Calle Sol", "Owner", true, false);
+            var adopter = await CheckUserAsync("3030", "Adoptante", "Pruebas", "adoptante@gmail.com", "350 634 2747", "Calle Luna Calle Sol", "Adopter", false, true);
             await CheckTemporaryOwner(owner);
             await CheckAdopter(adopter);
         }
@@ -114,7 +114,9 @@ namespace MyPet.Web.Data
             string email,
             string phone,
             string address,
-            string role)
+            string role,
+            bool isOwner = false,
+            bool isAdopter = false)
         {
             var user = await _userHelper.GetUserByEmailAsync(email);
             if (user == null)
@@ -129,6 +131,8 @@ namespace MyPet.Web.Data
                     Address = address,
                     Document = document,
                     CellPhone = phone,
+                    IsOwner = isOwner,
+                    IsAdopter = isAdopter
                 };
 
                 await _userHelper.AddUserAsync(user, "123456");
