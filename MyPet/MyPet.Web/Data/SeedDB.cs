@@ -20,15 +20,23 @@ namespace MyPet.Web.Data
 
         public async Task SeedAsync()
         {
+            await CheckRoles();
             await _context.Database.EnsureCreatedAsync();
             await CheckPetTypesAsync();
             await CheckPetsAsync();
             await AddHouseType();
             var manager = await CheckUserAsync("1010", "Juan", "Pruebas", "super@gmail.com", "350 634 2747", "Calle Luna Calle Sol", "Admin");
-            var owner = await CheckUserAsync("2020", "Dueño", "Pruebas", "andres14l@yopmail.com", "350 634 2747", "Calle Luna Calle Sol", "Owner");
+            var owner = await CheckUserAsync("2020", "Dueño", "Pruebas", "owner@yopmail.com", "350 634 2747", "Calle Luna Calle Sol", "Owner");
             var adopter = await CheckUserAsync("3030", "Adoptante", "Pruebas", "adoptante@gmail.com", "350 634 2747", "Calle Luna Calle Sol", "Adopter");
             await CheckTemporaryOwner(owner);
             await CheckAdopter(adopter);
+        }
+
+        private async Task CheckRoles()
+        {
+            await _userHelper.CheckRoleAsync("Admin");
+            await _userHelper.CheckRoleAsync("Owner");
+            await _userHelper.CheckRoleAsync("Adopter");
         }
 
         private async Task CheckTemporaryOwner(User user)
@@ -42,7 +50,7 @@ namespace MyPet.Web.Data
 
         private async Task CheckAdopter(User user)
         {
-            if (!_context.TemporaryOwners.Any())
+            if (!_context.Adopters.Any())
             {
                 _context.Adopters.Add(new Adopter { User = user });
                 await _context.SaveChangesAsync();
@@ -119,7 +127,8 @@ namespace MyPet.Web.Data
                     UserName = email,
                     PhoneNumber = phone,
                     Address = address,
-                    Document = document
+                    Document = document,
+                    CellPhone = phone,
                 };
 
                 await _userHelper.AddUserAsync(user, "123456");
