@@ -10,22 +10,22 @@ using MyPet.Web.Data.Entities;
 
 namespace MyPet.Web.Controllers
 {
-    public class TemporaryOwnersController : Controller
+    public class PetTypesController : Controller
     {
         private readonly DataContext _context;
 
-        public TemporaryOwnersController(DataContext context)
+        public PetTypesController(DataContext context)
         {
             _context = context;
         }
 
-        // GET: TemporaryOwners
+        // GET: PetTypes
         public async Task<IActionResult> Index()
         {
-            return View(await _context.TemporaryOwners.ToListAsync());
+            return View(await _context.PetTypes.ToListAsync());
         }
 
-        // GET: TemporaryOwners/Details/5
+        // GET: PetTypes/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace MyPet.Web.Controllers
                 return NotFound();
             }
 
-            var temporaryOwner = await _context.TemporaryOwners
+            var petType = await _context.PetTypes
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (temporaryOwner == null)
+            if (petType == null)
             {
                 return NotFound();
             }
 
-            return View(temporaryOwner);
+            return View(petType);
         }
 
-        // GET: TemporaryOwners/Create
+        // GET: PetTypes/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: TemporaryOwners/Create
+        // POST: PetTypes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Document,FirstName,LastName,FixedPhone,CellPhone,Address")] TemporaryOwner temporaryOwner)
+        public async Task<IActionResult> Create([Bind("Id,Name")] PetType petType)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(temporaryOwner);
+                _context.Add(petType);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(temporaryOwner);
+            return View(petType);
         }
 
-        // GET: TemporaryOwners/Edit/5
+        // GET: PetTypes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace MyPet.Web.Controllers
                 return NotFound();
             }
 
-            var temporaryOwner = await _context.TemporaryOwners.FindAsync(id);
-            if (temporaryOwner == null)
+            var petType = await _context.PetTypes.FindAsync(id);
+            if (petType == null)
             {
                 return NotFound();
             }
-            return View(temporaryOwner);
+            return View(petType);
         }
 
-        // POST: TemporaryOwners/Edit/5
+        // POST: PetTypes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Document,FirstName,LastName,FixedPhone,CellPhone,Address")] TemporaryOwner temporaryOwner)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] PetType petType)
         {
-            if (id != temporaryOwner.Id)
+            if (id != petType.Id)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace MyPet.Web.Controllers
             {
                 try
                 {
-                    _context.Update(temporaryOwner);
+                    _context.Update(petType);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!TemporaryOwnerExists(temporaryOwner.Id))
+                    if (!PetTypeExists(petType.Id))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace MyPet.Web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(temporaryOwner);
+            return View(petType);
         }
 
-        // GET: TemporaryOwners/Delete/5
+        // GET: PetTypes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +124,30 @@ namespace MyPet.Web.Controllers
                 return NotFound();
             }
 
-            var temporaryOwner = await _context.TemporaryOwners
+            var petType = await _context.PetTypes
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (temporaryOwner == null)
+            if (petType == null)
             {
                 return NotFound();
             }
 
-            return View(temporaryOwner);
+            return View(petType);
         }
 
-        // POST: TemporaryOwners/Delete/5
+        // POST: PetTypes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var temporaryOwner = await _context.TemporaryOwners.FindAsync(id);
-            _context.TemporaryOwners.Remove(temporaryOwner);
+            var petType = await _context.PetTypes.FindAsync(id);
+            _context.PetTypes.Remove(petType);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool TemporaryOwnerExists(int id)
+        private bool PetTypeExists(int id)
         {
-            return _context.TemporaryOwners.Any(e => e.Id == id);
+            return _context.PetTypes.Any(e => e.Id == id);
         }
     }
 }

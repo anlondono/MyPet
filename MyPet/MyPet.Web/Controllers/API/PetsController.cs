@@ -28,7 +28,7 @@ namespace MyPet.Web.Controllers.API
         [HttpGet]
         public IEnumerable<Pet> GetPets()
         {
-            return _dataContext.Pets;
+            return _dataContext.Pets.Where(p => p.IsAvailable);
         }
 
         // GET: api/Pets/5
@@ -143,6 +143,7 @@ namespace MyPet.Web.Controllers.API
 
             var pet = new Pet
             {
+                IsAvailable = true,
                 ImageUrl = imageUrl,
                 Name = request.Name,
                 TemporaryOwner = owner,

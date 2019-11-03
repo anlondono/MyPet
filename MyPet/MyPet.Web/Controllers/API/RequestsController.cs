@@ -22,14 +22,22 @@ namespace MyPet.Web.Controllers.API
             _context = context;
         }
 
-        // GET: api/Races
+        // GET: api/Requests
         [HttpGet]
-        public IEnumerable<Request> GetRequests()
+        [Route("Adopter/{id}")]
+        public IEnumerable<Request> GetRequestsAdopter([FromRoute] int id)
         {
-            return _context.Requests.Where(r => r.Active);
+            return _context.Requests.Where(r => r.Active && r.Adopter.Id == id);
+        }
+        // GET: api/Requests
+        [HttpGet]
+        [Route("Owner/{id}")]
+        public IEnumerable<Request> GetRequestsOwner([FromRoute] int id)
+        {
+            return _context.Requests.Where(r => r.Active && r.Pet.TemporaryOwner.Id == id);
         }
 
-        // GET: api/Races/5
+        // GET: api/Requests/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetRequest([FromRoute] int id)
         {
@@ -49,6 +57,7 @@ namespace MyPet.Web.Controllers.API
         }
 
         [HttpPost]
+        [Route("Create")]
         public async Task<IActionResult> PostRequest([FromBody] AskingPetRequest request)
         {
             if (!ModelState.IsValid)
@@ -89,6 +98,7 @@ namespace MyPet.Web.Controllers.API
         }
 
         [HttpPost]
+        [Route("Deny/{id}")]
         public async Task<IActionResult> DenyRequest([FromRoute] int id)
         {
             if (!ModelState.IsValid)
@@ -111,6 +121,7 @@ namespace MyPet.Web.Controllers.API
         }
 
         [HttpPost]
+        [Route("Accept/{id}")]
         public async Task<IActionResult> AcceptRequest([FromRoute] int id)
         {
             if (!ModelState.IsValid)

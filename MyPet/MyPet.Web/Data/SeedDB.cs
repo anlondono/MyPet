@@ -1,4 +1,5 @@
 ﻿using MyPet.Web.Data.Entities;
+using MyPet.Web.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,48 +10,43 @@ namespace MyPet.Web.Data
     public class SeedDB
     {
         private readonly DataContext _context;
+        private readonly IUserHelper _userHelper;
 
-        public SeedDB(DataContext context)
+        public SeedDB(DataContext context, IUserHelper userHelper)
         {
             _context = context;
+            this._userHelper = userHelper;
         }
 
         public async Task SeedAsync()
         {
-
             await _context.Database.EnsureCreatedAsync();
             await CheckPetTypesAsync();
             await CheckPetsAsync();
-            await CheckTemporaryOwner();
             await AddHouseType();
+            var manager = await CheckUserAsync("1010", "Juan", "Pruebas", "super@gmail.com", "350 634 2747", "Calle Luna Calle Sol", "Admin");
+            var owner = await CheckUserAsync("2020", "Dueño", "Pruebas", "andres14l@yopmail.com", "350 634 2747", "Calle Luna Calle Sol", "Owner");
+            var adopter = await CheckUserAsync("3030", "Adoptante", "Pruebas", "adoptante@gmail.com", "350 634 2747", "Calle Luna Calle Sol", "Adopter");
+            await CheckTemporaryOwner(owner);
+            await CheckAdopter(adopter);
         }
 
-        private async Task CheckTemporaryOwner()
+        private async Task CheckTemporaryOwner(User user)
         {
-            if(!_context.TemporaryOwners.Any())
+            if (!_context.TemporaryOwners.Any())
             {
-                AddTemporaryOwners("102030453912",
-                    "Andres","Londono","5854278","3225327305","Cll 122a");
-                AddTemporaryOwners("1020304",
-                   "Pedro", "Correa", "5854278", "3225327305", "Cll 122b");
-
+                _context.TemporaryOwners.Add(new TemporaryOwner { User = user });
+                await _context.SaveChangesAsync();
             }
-            
         }
 
-        private void AddTemporaryOwners(string document,string firstname,
-            string lastname,string fixedphone,string cellphone,string address)
+        private async Task CheckAdopter(User user)
         {
-            _context.TemporaryOwners.Add(new TemporaryOwner
+            if (!_context.TemporaryOwners.Any())
             {
-               Document =document,
-               FirstName =firstname,
-               LastName=lastname,
-               FixedPhone=fixedphone,
-               CellPhone=cellphone,
-               Address=address
-               
-            });
+                _context.Adopters.Add(new Adopter { User = user });
+                await _context.SaveChangesAsync();
+            }
         }
 
         private async Task CheckPetsAsync()
@@ -72,9 +68,9 @@ namespace MyPet.Web.Data
             {
 
                 Name = name,
-                Age=age,
-                Description=description,
-                IsAvailable=isavailable
+                Age = age,
+                Description = description,
+                IsAvailable = isavailable
             });
         }
 
@@ -101,6 +97,39 @@ namespace MyPet.Web.Data
                 _context.HouseTypes.Add(new HouseType { Name = "Apartament" });
                 _context.HouseTypes.Add(new HouseType { Name = "Farm" });
             }
+        }
+
+        private async Task<User> CheckUserAsync(
+            string document,
+            string firstName,
+            string lastName,
+            string email,
+            string phone,
+            string address,
+            string role)
+        {
+            var user = await _userHelper.GetUserByEmailAsync(email);
+            if (user == null)
+            {
+                user = new User
+                {
+                    FirstName = firstName,
+                    LastName = lastName,
+                    Email = email,
+                    UserName = email,
+                    PhoneNumber = phone,
+                    Address = address,
+                    Document = document
+                };
+
+                await _userHelper.AddUserAsync(user, "123456");
+                await _userHelper.AddUserToRoleAsync(user, role);
+
+                var token = await _userHelper.GenerateEmailConfirmationTokenAsync(user);
+                await _userHelper.ConfirmEmailAsync(user, token);
+            }
+
+            return user;
         }
 
     }
