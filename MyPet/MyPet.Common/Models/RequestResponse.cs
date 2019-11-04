@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
-namespace MyPet.Web.Data.Entities
+namespace MyPet.Common.Models
 {
-    public class Request
+    public class RequestResponse
     {
         public int Id { get; set; }
 
@@ -21,10 +20,10 @@ namespace MyPet.Web.Data.Entities
 
         public bool Denied { get; set; }
 
-        public HouseType HouseType { get; set; }
+        public string HouseType { get; set; }
 
-        public Adopter Adopter { get; set; }
+        public string Adopter { get; set; }
 
-        public Pet Pet { get; set; }
+        public PetResponse Pet { get; set; }
     }
 }

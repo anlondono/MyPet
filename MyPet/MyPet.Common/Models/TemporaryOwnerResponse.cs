@@ -22,6 +22,8 @@ namespace MyPet.Common.Models
 
         public ICollection<PetResponse> Pets { get; set; }
 
+        public ICollection<RequestResponse> Requests { get; set; }
+
         public string FullName => $"{FirstName} {LastName}";
     }
 }

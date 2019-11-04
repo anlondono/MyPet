@@ -106,7 +106,7 @@ namespace MyPet.Prism.ViewModels
             }
 
             var token = response.Result;
-            var response2 = await _apiService.GetOwnerByEmailAsync(url, "api", "/AccountTypes/GetAccountTypeByEmail", "bearer", token.Token, Email);
+            var response2 = await _apiService.GetOwnerByEmailAsync(url, "api", "/TemporaryOwners/GetTemporaryOwnerByEmail", "bearer", token.Token, Email);
             if (!response2.IsSuccess)
             {
                 IsRunning = false;
