@@ -1,6 +1,7 @@
 ﻿using MyPet.Common.Helpers;
 using MyPet.Common.Models;
 using MyPet.Common.Services;
+using MyPet.Prism.Helpers;
 using Newtonsoft.Json;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -84,7 +85,10 @@ namespace MyPet.Prism.ViewModels
             {
                 IsEnabled = true;
                 IsRunning = false;
-                await App.Current.MainPage.DisplayAlert("Error", "Check the internet connection.", "Accept");
+                await App.Current.MainPage.DisplayAlert(
+                    Languages.Error,
+                    Languages.CheckConection,
+                    Languages.Accept);
                 return;
             }
 
@@ -100,7 +104,11 @@ namespace MyPet.Prism.ViewModels
             {
                 IsRunning = false;
                 IsEnabled = true;
-                await App.Current.MainPage.DisplayAlert("Error", "Email or password incorrect.", "Accept");
+                await App.Current.MainPage.DisplayAlert(
+                   Languages.Error,
+                   Languages.EmailorPassword,
+                   Languages.Accept);
+                
                 Password = string.Empty;
                 return;
             }
