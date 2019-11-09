@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using MyPet.Common.Models;
 using MyPet.Common.Helpers;
 using System;
+using MyPet.Common.Services;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MyPet.Prism
@@ -39,6 +40,7 @@ namespace MyPet.Prism
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.Register<IApiService, ApiService>();
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
             containerRegistry.RegisterForNavigation<RememberPasswordPage, RememberPasswordPageViewModel>();

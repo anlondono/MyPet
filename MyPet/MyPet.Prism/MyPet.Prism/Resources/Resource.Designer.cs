@@ -79,7 +79,7 @@ namespace MyPet.Prism.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Check the internet connection.
+        ///   Looks up a localized string similar to Check your connection.
         /// </summary>
         internal static string CheckConection {
             get {
@@ -88,7 +88,7 @@ namespace MyPet.Prism.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Email or password incorrect.
+        ///   Looks up a localized string similar to Emeail or password.
         /// </summary>
         internal static string EmailorPassword {
             get {

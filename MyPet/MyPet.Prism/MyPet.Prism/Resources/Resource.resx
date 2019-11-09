@@ -123,13 +123,13 @@
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="Error" xml:space="preserve">
-    <value>Error</value>
-  </data>
   <data name="CheckConection" xml:space="preserve">
-    <value>Check the internet connection</value>
+    <value>Check your connection</value>
   </data>
   <data name="EmailorPassword" xml:space="preserve">
-    <value>Email or password incorrect</value>
+    <value>Emeail or password</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
   </data>
 </root>

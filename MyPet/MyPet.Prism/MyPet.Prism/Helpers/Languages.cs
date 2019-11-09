@@ -22,8 +22,5 @@ namespace MyPet.Prism.Helpers
         public static string CheckConection => Resource.CheckConection;
 
         public static string EmailorPassword => Resource.EmailorPassword;
-
-
-
     }
 }
