@@ -101,6 +101,7 @@ namespace MyPet.Web.Controllers.API
             oldPet.Race = request.Race;
             oldPet.Description = request.Description;
             oldPet.Age = request.Age;
+            oldPet.IsAvailable = request.IsAvailable;
 
             _dataContext.Pets.Update(oldPet);
             await _dataContext.SaveChangesAsync();

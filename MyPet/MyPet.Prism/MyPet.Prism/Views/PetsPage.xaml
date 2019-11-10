@@ -7,15 +7,18 @@
     xmlns:prism="http://prismlibrary.com"
     Title="{Binding Title}"
     prism:ViewModelLocator.AutowireViewModel="True"
-    BackgroundColor="{StaticResource colorBackgroud}"
     >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding AddPetCommand}" IconImageSource="{Binding Icon}" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-
         <StackLayout Padding="10">
             <ListView
                 BackgroundColor="Transparent"
                 HasUnevenRows="True"
+                IsRefreshing="{Binding IsRefreshing}"
                 ItemsSource="{Binding Pets}"
+                RefreshCommand="{Binding RefreshPetCommand}"
                 SeparatorVisibility="None"
                 >
                 <ListView.ItemTemplate>
@@ -87,13 +90,13 @@
                                         <Label
                                             Grid.Row="2"
                                             Grid.Column="0"
-                                            Text="Born"
+                                            Text="Age"
                                             />
                                         <Label
                                             Grid.Row="2"
                                             Grid.Column="1"
                                             FontAttributes="Bold"
-                                            Text="{Binding Born, StringFormat='{0:yyyy/MM/dd}'}"
+                                            Text="{Binding Age}"
                                             />
                                     </Grid>
                                     <Image Grid.Column="2" Source="ic_chevron_right" />

@@ -22,5 +22,9 @@ namespace MyPet.Prism.Helpers
         public static string CheckConection => Resource.CheckConection;
 
         public static string EmailorPassword => Resource.EmailorPassword;
+
+        public static string Confirm => Resource.Confirm;
+        public static string Yes => Resource.Yes;
+        public static string No => Resource.No;
     }
 }

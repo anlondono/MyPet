@@ -15,15 +15,21 @@
             <x:String x:Key="UrlAPI">https://mypetapp.azurewebsites.net/</x:String>
 
             <!--  Colors  -->
-            <Color x:Key="colorBackgroud">#F2F2F2</Color>
-            <Color x:Key="colorPrimary">#0468BF</Color>
-            <Color x:Key="colorSecondary">#067302</Color>
+            <Color x:Key="colorBackgroud">#BDBDBD</Color>
+            <Color x:Key="colorPrimary">#9C27B0</Color>
+            <Color x:Key="colorSecondary">#7B1FA2</Color>
             <Color x:Key="colorDanger">#F2055C</Color>
-            <Color x:Key="colorAccent">#BF4904</Color>
-            <Color x:Key="colorFont">#0468BF</Color>
-            <Color x:Key="colorFontInverse">#F2F2F2</Color>
+            <Color x:Key="colorAccent">#03A9F4</Color>
+            <Color x:Key="colorFont">#212121</Color>
+            <Color x:Key="colorFontInverse">#757575</Color>
 
             <!--  Styles  -->
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource colorSecondary}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+
             <Style TargetType="Button">
                 <Setter Property="BackgroundColor" Value="{StaticResource colorPrimary}" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />

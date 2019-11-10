@@ -18,6 +18,8 @@ namespace MyPet.Common.Models
 
         public string Description { get; set; }
 
+        public bool IsAvailable { get; set; }
+
         public string PetType { get; set; }
     }
 }

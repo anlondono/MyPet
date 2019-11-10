@@ -28,28 +28,7 @@ namespace MyPet.Web.Controllers.API
         [HttpGet]
         public IEnumerable<PetType> GetPetTypes()
         {
-            return _context.PetTypes;
+            return _context.PetTypes.OrderBy(pt => pt.Name);
         }
-
-        // GET: api/PetTypes/5
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetPetType([FromRoute] int id)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var petType = await _context.PetTypes.FindAsync(id);
-
-            if (petType == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(petType);
-        }
-
-
     }
 }

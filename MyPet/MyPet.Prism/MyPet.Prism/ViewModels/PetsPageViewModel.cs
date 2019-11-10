@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace MyPet.Prism.ViewModels
 {
@@ -20,7 +21,11 @@ namespace MyPet.Prism.ViewModels
         private TemporaryOwnerResponse _owner;
         private ObservableCollection<PetItemViewModel> _pets;
         private DelegateCommand _addPetCommand;
+        private DelegateCommand _refreshPetCommand;
         private static PetsPageViewModel _instance;
+
+        private string _icon;
+        private bool _isRefreshing;
 
         public PetsPageViewModel(INavigationService navigationService,
             IApiService apiService) : base(navigationService)
@@ -32,12 +37,26 @@ namespace MyPet.Prism.ViewModels
             LoadOwner();
         }
 
-        public DelegateCommand AddPetCommand => _addPetCommand ?? (_addPetCommand = new DelegateCommand(AddPet));
+        public DelegateCommand AddPetCommand => _addPetCommand ?? 
+            (_addPetCommand = new DelegateCommand(AddPet));
+        public DelegateCommand RefreshPetCommand => _refreshPetCommand ?? 
+            (_refreshPetCommand = new DelegateCommand(RefreshPet));
 
         public ObservableCollection<PetItemViewModel> Pets
         {
             get => _pets;
             set => SetProperty(ref _pets, value);
+        }
+        public string Icon
+        {
+            get => _icon;
+            set => SetProperty(ref _icon, value);
+        }
+
+        public bool IsRefreshing
+        {
+            get => _isRefreshing;
+            set => SetProperty(ref _isRefreshing, value);
         }
 
         public static PetsPageViewModel GetInstance()
@@ -73,10 +92,12 @@ namespace MyPet.Prism.ViewModels
             if (_owner.IsOwner)
             {
                 Title = $"Pets of: {_owner.FullName}";
+                Icon = "ic_action_add_circle.png";
             }
             else
             {
                 Title = "Chandas dispobibles";
+                Icon = string.Empty;
             }
 
             Pets = new ObservableCollection<PetItemViewModel>(_owner.Pets.Select(
@@ -94,7 +115,17 @@ namespace MyPet.Prism.ViewModels
 
         private async void AddPet()
         {
-            await _navigationService.NavigateAsync("EditPet");
+            if (!string.IsNullOrEmpty(Icon))
+            {
+                await _navigationService.NavigateAsync("EditPetPage");
+            }
+        }
+
+        private async void RefreshPet()
+        {
+            IsRefreshing = true;
+            await UpdateOwnerAsync();
+            IsRefreshing = false;
         }
     }
 }

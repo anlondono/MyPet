@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MyPet.Prism.Views.EditPetPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:prism="http://prismlibrary.com"
+    Title="{Binding Title}"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    BackgroundColor="{StaticResource colorBackgroud}"
+    >
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <ScrollView>
+                <AbsoluteLayout>
+                    <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+
+                        <ffimageloading:CachedImage
+                            Aspect="AspectFit"
+                            CacheDuration="50"
+                            DownsampleToViewSize="true"
+                            ErrorPlaceholder="ErrorImage"
+                            LoadingPlaceholder="LoaderImage"
+                            RetryCount="3"
+                            RetryDelay="600"
+                            Source="{Binding ImageSource}"
+                            >
+                            <ffimageloading:CachedImage.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ChangeImageCommand}" />
+                            </ffimageloading:CachedImage.GestureRecognizers>
+                        </ffimageloading:CachedImage>
+
+                        <Label
+                            FontSize="Micro"
+                            HorizontalOptions="Center"
+                            Text="Cambiar Imagen"
+                            >
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ChangeImageCommand}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Text=" Name"
+                                VerticalOptions="Center"
+                                />
+                            <Entry
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Placeholder="NamePlaceHolder}"
+                                Text="{Binding Pet.Name}"
+                                />
+
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Text="Race}"
+                                VerticalOptions="Center"
+                                />
+                            <Entry
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Placeholder="RacePlaceHolder}"
+                                Text="{Binding Pet.Race}"
+                                />
+
+                            <Label
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Text="PetType}"
+                                VerticalOptions="Center"
+                                />
+                            <Picker
+                                Title=" PetTypePlaceHolder}"
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                ItemDisplayBinding="{Binding Name}"
+                                ItemsSource="{Binding PetTypes}"
+                                SelectedItem="{Binding PetType}"
+                                />
+
+                            <Label
+                                Grid.Row="3"
+                                Grid.Column="0"
+                                Text="Age}"
+                                VerticalOptions="Center"
+                                />
+
+                            <Entry
+                                Grid.Row="3"
+                                Grid.Column="1"
+                                Keyboard="Numeric"
+                                Placeholder="AgePlaceHolder}"
+                                Text="{Binding Pet.Age}"
+                                />
+
+                            <Label
+                                Grid.Row="4"
+                                Grid.Column="0"
+                                Text=" Description}"
+                                VerticalOptions="Center"
+                                />
+                            <Editor
+                                Grid.Row="4"
+                                Grid.Column="1"
+                                HeightRequest="80"
+                                Text="{Binding Pet.Description}"
+                                />
+                        </Grid>
+
+                    </StackLayout>
+
+                </AbsoluteLayout>
+            </ScrollView>
+            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+
+                <Button
+                    Command="{Binding SaveCommand}"
+                    IsEnabled="{Binding IsEnabled}"
+                    Text=" Save}"
+                    />
+
+                <Button
+                    Command="{Binding DeleteCommand}"
+                    IsEnabled="{Binding IsEnabled}"
+                    IsVisible="{Binding IsEdit}"
+                    Style="{StaticResource dangerButton}"
+                    Text="Delete}"
+                    />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

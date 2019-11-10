@@ -126,10 +126,19 @@
   <data name="CheckConection" xml:space="preserve">
     <value>Check your connection</value>
   </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
   <data name="EmailorPassword" xml:space="preserve">
     <value>Emeail or password</value>
   </data>
   <data name="Error" xml:space="preserve">
     <value>Error</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
   </data>
 </root>

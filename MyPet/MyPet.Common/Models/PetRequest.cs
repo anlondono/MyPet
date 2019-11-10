@@ -21,5 +21,7 @@ namespace MyPet.Common.Models
         public int PetTypeId { get; set; }
 
         public byte[] ImageArray { get; set; }
+
+        public bool IsAvailable { get; set; }
     }
 }

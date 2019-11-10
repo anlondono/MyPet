@@ -27,7 +27,7 @@ namespace MyPet.Web.Data.Entities
 
         public string ImageFullPath => string.IsNullOrEmpty(ImageUrl)
             ? null
-            : $"https://mypet.azurewebsites.net{ImageUrl.Substring(1)}";
+            : $"https://mypetapp.azurewebsites.net{ImageUrl.Substring(1)}";
 
         [Display(Name = "Is Available?")]
         public bool IsAvailable { get; set; }
