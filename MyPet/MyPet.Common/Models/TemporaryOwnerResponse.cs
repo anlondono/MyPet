@@ -20,6 +20,10 @@ namespace MyPet.Common.Models
 
         public string Email { get; set; }
 
+        public bool IsOwner { get; set; }
+
+        public bool IsAdopter { get; set; }
+
         public ICollection<PetResponse> Pets { get; set; }
 
         public ICollection<RequestResponse> Requests { get; set; }

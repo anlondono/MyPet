@@ -59,7 +59,9 @@ namespace MyPet.Web.Controllers.API
                 FirstName = request.FirstName,
                 LastName = request.LastName,
                 PhoneNumber = request.Phone,
-                UserName = request.Email
+                UserName = request.Email,
+                IsAdopter = request.RoleId == 2,
+                IsOwner = request.RoleId == 1
             };
 
             var result = await _userHelper.AddUserAsync(user, request.Password);
@@ -70,7 +72,7 @@ namespace MyPet.Web.Controllers.API
 
             var userNew = await _userHelper.GetUserByEmailAsync(request.Email);
 
-            if (request.RoleId == 1)
+            if (user.IsOwner)
             {
                 await _userHelper.AddUserToRoleAsync(userNew, "Owner");
                 _dataContext.TemporaryOwners.Add(new TemporaryOwner { User = userNew });

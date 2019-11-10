@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MyPet.Prism.Views.PetsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:prism="http://prismlibrary.com"
+    Title="{Binding Title}"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    BackgroundColor="{StaticResource colorBackgroud}"
+    >
+    <ContentPage.Content>
+
+        <StackLayout Padding="10">
+            <ListView
+                BackgroundColor="Transparent"
+                HasUnevenRows="True"
+                ItemsSource="{Binding Pets}"
+                SeparatorVisibility="None"
+                >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame
+                                Margin="0,0,0,5"
+                                CornerRadius="10"
+                                HasShadow="True"
+                                >
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SelectPetCommand}" />
+                                </Frame.GestureRecognizers>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <ffimageloading:CachedImage
+                                        Grid.Column="0"
+                                        CacheDuration="50"
+                                        DownsampleToViewSize="true"
+                                        ErrorPlaceholder="ErrorImage"
+                                        LoadingPlaceholder="LoaderImage"
+                                        RetryCount="3"
+                                        RetryDelay="600"
+                                        Source="{Binding ImageUrl}"
+                                        WidthRequest="100"
+                                        />
+                                    <Grid Grid.Column="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="2*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Label
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            Text="Name"
+                                            />
+                                        <Label
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            FontAttributes="Bold"
+                                            Text="{Binding Name}"
+                                            />
+                                        <Label
+                                            Grid.Row="1"
+                                            Grid.Column="0"
+                                            Text="Race"
+                                            />
+                                        <Label
+                                            Grid.Row="1"
+                                            Grid.Column="1"
+                                            FontAttributes="Bold"
+                                            Text="{Binding Race}"
+                                            />
+                                        <Label
+                                            Grid.Row="2"
+                                            Grid.Column="0"
+                                            Text="Born"
+                                            />
+                                        <Label
+                                            Grid.Row="2"
+                                            Grid.Column="1"
+                                            FontAttributes="Bold"
+                                            Text="{Binding Born, StringFormat='{0:yyyy/MM/dd}'}"
+                                            />
+                                    </Grid>
+                                    <Image Grid.Column="2" Source="ic_chevron_right" />
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

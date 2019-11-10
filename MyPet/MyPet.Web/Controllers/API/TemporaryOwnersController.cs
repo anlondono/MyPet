@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyPet.Common.Models;
 using MyPet.Web.Data;
+using MyPet.Web.Data.Entities;
 using MyPet.Web.Helpers;
 
 namespace MyPet.Web.Controllers.API
@@ -42,7 +43,7 @@ namespace MyPet.Web.Controllers.API
                     return BadRequest("User not found.");
                 }
 
-                if (await _userHelper.IsUserInRoleAsync(user, "Owner"))
+                if (user.IsOwner)
                 {
                     return await GetOwnerAsync(emailRequest);
                 }
@@ -68,6 +69,8 @@ namespace MyPet.Web.Controllers.API
             var response = new TemporaryOwnerResponse
             {
                 Id = owner.Id,
+                IsAdopter = false,
+                IsOwner = true,
                 FirstName = owner.User.FirstName,
                 LastName = owner.User.LastName,
                 Address = owner.User.Address,
@@ -96,16 +99,28 @@ namespace MyPet.Web.Controllers.API
                 .Include(o => o.Requests)
                 .ThenInclude(p => p.Pet)
                 .FirstOrDefaultAsync(o => o.User.UserName.ToLower() == emailRequest.Email.ToLower());
-
+            var pets = await _dataContext.Pets.Where(p => p.IsAvailable).ToListAsync();
             var response = new TemporaryOwnerResponse
             {
                 Id = adopter.Id,
+                IsAdopter = true,
+                IsOwner = false,
                 FirstName = adopter.User.FirstName,
                 LastName = adopter.User.LastName,
                 Address = adopter.User.Address,
                 Document = adopter.User.Document,
                 Email = adopter.User.Email,
                 PhoneNumber = adopter.User.PhoneNumber,
+                Pets = pets.Select(p => new PetResponse
+                {
+                    Age = p.Age,
+                    Id = p.Id,
+                    ImageUrl = p.ImageFullPath,
+                    Name = p.Name,
+                    Race = p.Race,
+                    Description = p.Description,
+                    PetType = p.PetType.Name,
+                }).ToList(),
                 Requests = adopter.Requests.Select(r => new RequestResponse
                 {
                     Id = r.Id,

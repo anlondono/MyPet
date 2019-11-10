@@ -108,13 +108,19 @@ namespace MyPet.Prism.ViewModels
                    Languages.Error,
                    Languages.EmailorPassword,
                    Languages.Accept);
-                
+
                 Password = string.Empty;
                 return;
             }
 
             var token = response.Result;
-            var response2 = await _apiService.GetOwnerByEmailAsync(url, "api", "/TemporaryOwners/GetTemporaryOwnerByEmail", "bearer", token.Token, Email);
+            var response2 = await _apiService.GetOwnerByEmailAsync(
+                url,
+                "api",
+                "/TemporaryOwners/GetTemporaryOwnerByEmail",
+                "bearer",
+                token.Token,
+                Email);
             if (!response2.IsSuccess)
             {
                 IsRunning = false;

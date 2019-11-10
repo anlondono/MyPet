@@ -26,11 +26,13 @@ namespace MyPet.Prism
 
         protected override async void OnInitialized()
         {
-            InitializeComponent();  
+            InitializeComponent();
             var token = JsonConvert.DeserializeObject<TokenResponse>(Settings.Token);
             if (Settings.IsRemembered && token?.Expiration > DateTime.Now)
             {
-                await NavigationService.NavigateAsync("/VeterinaryMasterDetailPage/NavigationPage/PetsPage");
+
+                await NavigationService.NavigateAsync("/PetMasterDetailPage/NavigationPage/PetsPage");
+                await PetsPageViewModel.GetInstance().UpdateOwnerAsync();
             }
             else
             {
@@ -46,6 +48,8 @@ namespace MyPet.Prism
             containerRegistry.RegisterForNavigation<RememberPasswordPage, RememberPasswordPageViewModel>();
             containerRegistry.RegisterForNavigation<PetMasterDetailPage, PetMasterDetailPageViewModel>();
             containerRegistry.RegisterForNavigation<RegisterPage, RegisterPageViewModel>();
+            containerRegistry.RegisterForNavigation<PetsPage, PetsPageViewModel>();
+            containerRegistry.RegisterForNavigation<PetPage, PetPageViewModel>();
         }
     }
 }

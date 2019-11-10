@@ -21,12 +21,15 @@
                 <Entry
                     Keyboard="Email"
                     Placeholder="Enter your email..."
+                    ReturnType="Next"
                     Text="{Binding Email}"
                     />
                 <Label Text="Password" />
                 <Entry
                     IsPassword="True"
                     Placeholder="Enter your password..."
+                    ReturnCommand="{Binding LoginCommand}"
+                    ReturnType="Go"
                     Text="{Binding Password}"
                     />
                 <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
@@ -56,8 +59,8 @@
                         Text="Register"
                         />
                 </StackLayout>
+                <ActivityIndicator IsRunning="{Binding IsRunning}" />
             </StackLayout>
-            <ActivityIndicator IsRunning="{Binding IsRunning}" />
             <!--<busyindicator:SfBusyIndicator
                 AnimationType="Gear"
                 AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"

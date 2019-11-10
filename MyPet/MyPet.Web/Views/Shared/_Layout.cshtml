@@ -35,7 +35,6 @@
                     @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                     {
                         <li><a asp-area="" asp-controller="PetTypes" asp-action="Index">Pet Types</a></li>
-                        <li><a asp-area="" asp-controller="TemporaryOwners" asp-action="Index">TemporaryOwners</a></li>
                     }
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
