@@ -20,8 +20,8 @@
             <Color x:Key="colorSecondary">#7B1FA2</Color>
             <Color x:Key="colorDanger">#F2055C</Color>
             <Color x:Key="colorAccent">#03A9F4</Color>
-            <Color x:Key="colorFont">#212121</Color>
-            <Color x:Key="colorFontInverse">#757575</Color>
+            <Color x:Key="colorFont">#757575</Color>
+            <Color x:Key="colorFontInverse">#ffffff</Color>
 
             <!--  Styles  -->
 

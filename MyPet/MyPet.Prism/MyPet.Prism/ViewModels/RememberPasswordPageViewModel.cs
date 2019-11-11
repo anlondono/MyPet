@@ -1,6 +1,8 @@
 ﻿using MyPet.Common.Helpers;
 using MyPet.Common.Models;
 using MyPet.Common.Services;
+using MyPet.Prism.Helpers;
+using MyPet.Prism.Resources;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -26,7 +28,7 @@ namespace MyPet.Prism.ViewModels
             _navigationService = navigationService;
             _apiService = apiService;
 
-            Title = "Remember Password";
+            Title = Resource.RemembePassword;
             IsEnabled = true;
         }
 
@@ -75,16 +77,16 @@ namespace MyPet.Prism.ViewModels
             if (!response.IsSuccess)
             {
                 await App.Current.MainPage.DisplayAlert(
-                    "Error",
+                    Languages.Error,
                     response.Message,
-                    "Accept");
+                    Languages.Accept);
                 return;
             }
 
             await App.Current.MainPage.DisplayAlert(
                 "Ok",
                 response.Message,
-                "Accept");
+                Languages.Accept);
             await _navigationService.GoBackAsync();
         }
 
@@ -93,9 +95,9 @@ namespace MyPet.Prism.ViewModels
             if (string.IsNullOrEmpty(Email) || !RegexHelper.IsValidEmail(Email))
             {
                 await App.Current.MainPage.DisplayAlert(
-                    "Error",
+                    Languages.Error,
                     "You must enter a valid email.",
-                    "Accept");
+                    Languages.Accept);
                 return false;
             }
 

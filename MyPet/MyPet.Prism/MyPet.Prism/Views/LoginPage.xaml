@@ -3,6 +3,7 @@
     x:Class="MyPet.Prism.Views.LoginPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:i18n="clr-namespace:MyPet.Prism.Helpers"
     xmlns:prism="http://prismlibrary.com"
     Title="{Binding Title}"
     prism:ViewModelLocator.AutowireViewModel="True"
@@ -17,17 +18,17 @@
                 >
 
                 <Image HeightRequest="180" Source="logo" />
-                <Label Text="Email" />
+                <Label Text="{i18n:Translate Email}" />
                 <Entry
-                    Keyboard="Email"
-                    Placeholder="Enter your email..."
+                    Keyboard="{i18n:Translate Email}"
+                    Placeholder="{i18n:Translate EnteranEmail}"
                     ReturnType="Next"
                     Text="{Binding Email}"
                     />
-                <Label Text="Password" />
+                <Label Text="{i18n:Translate Password}" />
                 <Entry
                     IsPassword="True"
-                    Placeholder="Enter your password..."
+                    Placeholder="{i18n:Translate EnteraPassword}"
                     ReturnCommand="{Binding LoginCommand}"
                     ReturnType="Go"
                     Text="{Binding Password}"
@@ -38,7 +39,7 @@
                 </StackLayout>
                 <Label
                     HorizontalOptions="Center"
-                    Text="Forgot your password?"
+                    Text="{i18n:Translate ForgotyourPassword}"
                     TextColor="{StaticResource colorAccent}"
                     >
                     <Label.GestureRecognizers>
@@ -50,13 +51,13 @@
                     <Button
                         Command="{Binding LoginCommand}"
                         IsEnabled="{Binding IsEnabled}"
-                        Text="Login"
+                        Text="{i18n:Translate Login}"
                         />
                     <Button
                         Command="{Binding RegisterCommand}"
                         IsEnabled="{Binding IsEnabled}"
                         Style="{StaticResource secondaryButton}"
-                        Text="Register"
+                        Text="{i18n:Translate Register}"
                         />
                 </StackLayout>
                 <ActivityIndicator IsRunning="{Binding IsRunning}" />

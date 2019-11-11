@@ -99,7 +99,10 @@ namespace MyPet.Web.Controllers.API
                 .Include(o => o.Requests)
                 .ThenInclude(p => p.Pet)
                 .FirstOrDefaultAsync(o => o.User.UserName.ToLower() == emailRequest.Email.ToLower());
-            var pets = await _dataContext.Pets.Where(p => p.IsAvailable).ToListAsync();
+            var pets = await _dataContext.Pets
+                .Include(pt=> pt.PetType)
+                .Where(p => p.IsAvailable)
+                .ToListAsync();
             var response = new TemporaryOwnerResponse
             {
                 Id = adopter.Id,
@@ -120,28 +123,6 @@ namespace MyPet.Web.Controllers.API
                     Race = p.Race,
                     Description = p.Description,
                     PetType = p.PetType.Name,
-                }).ToList(),
-                Requests = adopter.Requests.Select(r => new RequestResponse
-                {
-                    Id = r.Id,
-                    Pet = new PetResponse
-                    {
-                        Age = r.Pet.Age,
-                        Id = r.Pet.Id,
-                        ImageUrl = r.Pet.ImageFullPath,
-                        Name = r.Pet.Name,
-                        Race = r.Pet.Race,
-                        Description = r.Pet.Description,
-                        PetType = r.Pet.PetType.Name,
-                    },
-                    Date = r.Date,
-                    Adopter = r.Adopter.User.FullName,
-                    HasKids = r.HasKids,
-                    HasOthePets = r.HasOthePets,
-                    HouseType = r.HouseType.Name,
-                    Observation = r.Observation,
-                    Active = r.Active,
-                    Denied = r.Denied,
                 }).ToList()
             };
 

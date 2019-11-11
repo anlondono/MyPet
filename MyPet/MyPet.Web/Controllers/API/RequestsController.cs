@@ -39,26 +39,7 @@ namespace MyPet.Web.Controllers.API
         {
             return _context.Requests.Where(r => r.Active && r.Pet.TemporaryOwner.Id == id);
         }
-
-        // GET: api/Requests/5
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetRequest([FromRoute] int id)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var race = await _context.Requests.FindAsync(id);
-
-            if (race == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(race);
-        }
-
+        
         [HttpPost]
         [Route("Create")]
         public async Task<IActionResult> PostRequest([FromBody] AskingPetRequest request)

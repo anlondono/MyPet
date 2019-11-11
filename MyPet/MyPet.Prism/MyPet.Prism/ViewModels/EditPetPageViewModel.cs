@@ -96,14 +96,14 @@ namespace MyPet.Prism.ViewModels
                 Pet = parameters.GetValue<PetResponse>("pet");
                 ImageSource = Pet.ImageUrl;
                 IsEdit = true;
-                Title = "Edit Pet";
+                Title = Languages.EditPet;
             }
             else
             {
                 Pet = new PetResponse();
                 ImageSource = "noimage";
                 IsEdit = false;
-                Title = "New Pet";
+                Title = Languages.NewPet;
             }
 
             LoadPetTypesAsync();
@@ -121,9 +121,9 @@ namespace MyPet.Prism.ViewModels
                 IsEnabled = true;
                 IsRunning = false;
                 await App.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "Check the internet connection.",
-                    "Accept");
+                    Languages.Error,
+                    Languages.CheckConection,
+                    Languages.Accept);
                 await _navigationService.GoBackAsync();
                 return;
             }
@@ -142,9 +142,9 @@ namespace MyPet.Prism.ViewModels
             if (!response.IsSuccess)
             {
                 await App.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "Getting the pet types list, please try later,",
-                    "Accept");
+                    Languages.Error,
+                    Languages.GettingPetTypes,
+                    Languages.Accept);
                 await _navigationService.GoBackAsync();
                 return;
             }
@@ -163,11 +163,11 @@ namespace MyPet.Prism.ViewModels
             await CrossMedia.Current.Initialize();
 
             var source = await Application.Current.MainPage.DisplayActionSheet(
-                "Where do you want to get the picture from?",
-                "Cancel",
+                Languages.Wherepicturefrom,
+                Languages.Cancel,
                 null,
-                "From Gallery",
-                "From Camera");
+                Languages.FromGallery,
+                Languages.FromCamera);
 
             if (source == "Cancel")
             {

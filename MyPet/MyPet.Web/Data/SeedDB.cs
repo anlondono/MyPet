@@ -1,7 +1,5 @@
 ﻿using MyPet.Web.Data.Entities;
 using MyPet.Web.Helpers;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -28,7 +26,7 @@ namespace MyPet.Web.Data
             var manager = await CheckUserAsync("1010", "Juan", "Pruebas", "super@gmail.com", "350 634 2747", "Calle Luna Calle Sol", "Admin");
             var owner = await CheckUserAsync("2020", "Dueño", "Pruebas", "owner@yopmail.com",
                 "350 634 2747", "Calle Luna Calle Sol", "Owner", true, false);
-            var adopter = await CheckUserAsync("3030", "Adoptante", "Pruebas", "adoptante@gmail.com", 
+            var adopter = await CheckUserAsync("3030", "Adoptante", "Pruebas", "adoptante@gmail.com",
                 "350 634 2747", "Calle Luna Calle Sol", "Adopter", false, true);
             await CheckTemporaryOwner(owner);
             await CheckAdopter(adopter);

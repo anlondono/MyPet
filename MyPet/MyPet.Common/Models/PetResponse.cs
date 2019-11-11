@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-
-namespace MyPet.Common.Models
+﻿namespace MyPet.Common.Models
 {
     public class PetResponse
     {

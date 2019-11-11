@@ -132,4 +132,97 @@
   <data name="EmailorPassword" xml:space="preserve">
     <value>邮箱或密码错误</value>
   </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>確認一下</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="CheckConnection" xml:space="preserve">
+    <value>检查网络连接</value>
+  </data>
+  <data name="NewPet" xml:space="preserve">
+    <value>宠物</value>
+  </data>
+  <data name="GettingPetTypes" xml:space="preserve">
+    <value>获取宠物类型列表，请稍后再试！</value>
+  </data>
+  <data name="Wherepicturefrom" xml:space="preserve">
+    <value>您想从哪里获得图片？</value>
+  </data>
+  <data name="FromGallery" xml:space="preserve">
+    <value>地道</value>
+  </data>
+  <data name="FromCamera" xml:space="preserve">
+    <value>从照相机</value>
+  </data>
+  <data name="EnteranEmail" xml:space="preserve">
+    <value>你需要输入你的邮箱</value>
+  </data>
+  <data name="EnteraPassword" xml:space="preserve">
+    <value>必须输入密码。</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>详细信息</value>
+  </data>
+  <data name="Pets" xml:space="preserve">
+    <value>宠物</value>
+  </data>
+  <data name="PetsAvailable" xml:space="preserve">
+    <value>宠物出售</value>
+  </data>
+  <data name="EnteraDocument" xml:space="preserve">
+    <value>您必须输入文件！</value>
+  </data>
+  <data name="EnteraName" xml:space="preserve">
+    <value>- 必须输入名字</value>
+  </data>
+  <data name="EnterLastName" xml:space="preserve">
+    <value>- 必须输入姓氏</value>
+  </data>
+  <data name="EnterAddress" xml:space="preserve">
+    <value>必须输入地址。</value>
+  </data>
+  <data name="EenterValidEmail" xml:space="preserve">
+    <value>您必须输入有效的电子邮件地址</value>
+  </data>
+  <data name="EnteraPhonenumber" xml:space="preserve">
+    <value>您必须输入电话号码！</value>
+  </data>
+  <data name="SelectaRole" xml:space="preserve">
+    <value>必须选择角色。</value>
+  </data>
+  <data name="PasswordCharacteres" xml:space="preserve">
+    <value>密码长度必须至少为6个字符！</value>
+  </data>
+  <data name="EnteraPasswordConfirm" xml:space="preserve">
+    <value>您必须输入密码。</value>
+  </data>
+  <data name="PasswordandConfirmDoesNotMatch" xml:space="preserve">
+    <value>密码确认不匹配。</value>
+  </data>
+  <data name="RemembePassword" xml:space="preserve">
+    <value>记住密码</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>电子邮件</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>密码</value>
+  </data>
+  <data name="ForgotyourPassword" xml:space="preserve">
+    <value>忘记了密码?</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>登录</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>注册...</value>
+  </data>
+  <data name="EditPet" xml:space="preserve">
+    <value>编辑</value>
+  </data>
 </root>

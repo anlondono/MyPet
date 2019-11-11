@@ -16,6 +16,7 @@
             <ListView
                 BackgroundColor="Transparent"
                 HasUnevenRows="True"
+                IsPullToRefreshEnabled="True"
                 IsRefreshing="{Binding IsRefreshing}"
                 ItemsSource="{Binding Pets}"
                 RefreshCommand="{Binding RefreshPetCommand}"

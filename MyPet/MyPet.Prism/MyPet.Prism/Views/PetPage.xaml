@@ -1,8 +1,111 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="http://prismlibrary.com"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="MyPet.Prism.Views.PetPage">
-  
+<ContentPage
+    x:Class="MyPet.Prism.Views.PetPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:prism="http://prismlibrary.com"
+    Title="{Binding Title}"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    BackgroundColor="{StaticResource colorBackgroud}"
+    >
+    <StackLayout Padding="10">
+        <ScrollView>
+            <StackLayout>
+                <ffimageloading:CachedImage
+                    Aspect="AspectFit"
+                    CacheDuration="50"
+                    DownsampleToViewSize="true"
+                    ErrorPlaceholder="ErrorImage"
+                    HeightRequest="300"
+                    LoadingPlaceholder="LoaderImage"
+                    RetryCount="3"
+                    RetryDelay="600"
+                    Source="{Binding Pet.ImageUrl}"
+                    WidthRequest="300"
+                    />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        FontAttributes="Bold"
+                        Text="Name"
+                        />
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Text="{Binding Pet.Name}"
+                        />
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        FontAttributes="Bold"
+                        Text="Race"
+                        />
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Text="{Binding Pet.Race}"
+                        />
+                    <Label
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        FontAttributes="Bold"
+                        Text="Age"
+                        />
+                    <Label
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Text="{Binding Pet.Age}"
+                        />
+                    <Label
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        FontAttributes="Bold"
+                        Text="Pet Type"
+                        />
+                    <Label
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Text="{Binding Pet.PetType}"
+                        />
+                    <Label
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        FontAttributes="Bold"
+                        Text="Description"
+                        />
+                    <Label
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Text="{Binding Pet.Description}"
+                        />
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+        <Button
+            Command="{Binding EditPetCommand}"
+            IsVisible="{Binding IsOwner}"
+            Text="Edit Pet"
+            VerticalOptions="EndAndExpand"
+            />
+        <Button
+            Command="{Binding RequestPetCommand}"
+            IsVisible="{Binding IsAdopter}"
+            Text="Request Pet"
+            VerticalOptions="EndAndExpand"
+            />
+    </StackLayout>
 </ContentPage>

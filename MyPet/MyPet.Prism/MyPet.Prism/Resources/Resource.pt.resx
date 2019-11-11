@@ -132,4 +132,97 @@
   <data name="EmailorPassword" xml:space="preserve">
     <value>E-mail ou senha incorretos.</value>
   </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirme</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>&amp;Não</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="CheckConnection" xml:space="preserve">
+    <value>Verifique a ligação com a Internet.</value>
+  </data>
+  <data name="NewPet" xml:space="preserve">
+    <value>Adicionar novo Pet</value>
+  </data>
+  <data name="GettingPetTypes" xml:space="preserve">
+    <value>Para obter a lista de tipos de animais, tente mais tarde!</value>
+  </data>
+  <data name="Wherepicturefrom" xml:space="preserve">
+    <value>De onde você quer tirar a foto ?!</value>
+  </data>
+  <data name="FromGallery" xml:space="preserve">
+    <value>A Galeria</value>
+  </data>
+  <data name="FromCamera" xml:space="preserve">
+    <value>Da Câmera</value>
+  </data>
+  <data name="EnteranEmail" xml:space="preserve">
+    <value>Você precisa inserir o seu endereço de email.</value>
+  </data>
+  <data name="EnteraPassword" xml:space="preserve">
+    <value>Digite uma senha.</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detalhes</value>
+  </data>
+  <data name="Pets" xml:space="preserve">
+    <value>ANIMAIS DE ESTIMAÇÃO</value>
+  </data>
+  <data name="PetsAvailable" xml:space="preserve">
+    <value>Animais domésticos</value>
+  </data>
+  <data name="EnteraDocument" xml:space="preserve">
+    <value>Você deve inserir um documento!</value>
+  </data>
+  <data name="EnteraName" xml:space="preserve">
+    <value>- Digite um nome</value>
+  </data>
+  <data name="EnterLastName" xml:space="preserve">
+    <value>- Digite um sobrenome</value>
+  </data>
+  <data name="EnterAddress" xml:space="preserve">
+    <value>Você deve inserir um endereço.</value>
+  </data>
+  <data name="EenterValidEmail" xml:space="preserve">
+    <value>Deve inserir um endereço de email válido</value>
+  </data>
+  <data name="EnteraPhonenumber" xml:space="preserve">
+    <value>Você deve inserir um número de telefone!</value>
+  </data>
+  <data name="SelectaRole" xml:space="preserve">
+    <value>Você deve selecionar uma função.</value>
+  </data>
+  <data name="PasswordCharacteres" xml:space="preserve">
+    <value>A senha deve ter pelo menos 6 caracteres!</value>
+  </data>
+  <data name="EnteraPasswordConfirm" xml:space="preserve">
+    <value>Tem de introduzir uma palavra-passe</value>
+  </data>
+  <data name="PasswordandConfirmDoesNotMatch" xml:space="preserve">
+    <value>Senha e confirmação da senha não são iguais</value>
+  </data>
+  <data name="RemembePassword" xml:space="preserve">
+    <value>Lembrar senha</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Senha</value>
+  </data>
+  <data name="ForgotyourPassword" xml:space="preserve">
+    <value>Esqueceu sua senha?</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>&amp;Logon</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>&amp;Registrar...</value>
+  </data>
+  <data name="EditPet" xml:space="preserve">
+    <value>Editar Pet</value>
+  </data>
 </root>

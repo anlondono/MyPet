@@ -26,5 +26,39 @@ namespace MyPet.Prism.Helpers
         public static string Confirm => Resource.Confirm;
         public static string Yes => Resource.Yes;
         public static string No => Resource.No;
+        public static string NewPet => Resource.NewPet;
+        public static string CheckConnection=> Resource.CheckConnection;
+        public static string GettingPetTypes => Resource.GettingPetTypes;
+        public static string Wherepicturefrom => Resource.Wherepicturefrom;
+        public static string FromGallery => Resource.FromGallery;
+        public static string FromCamera => Resource.FromCamera;
+        public static string EnteranEmail => Resource.EnteranEmail;
+        public static string EnteraPassword => Resource.EnteraPassword;
+        public static string Details => Resource.Details;
+        public static string Pets => Resource.Pets;
+        public static string PetsAvailable => Resource.PetsAvailable;
+        public static string EnteraDocument => Resource.EnteraDocument;
+        public static string EnteraName => Resource.EnteraName;
+        public static string EnterLastName => Resource.EnterLastName;
+        public static string EnterAddress => Resource.EnterAddress;
+        public static string EenterValidEmail => Resource.EenterValidEmail;
+        public static string EnteraPhonenumber => Resource.EnteraPhonenumber;
+        public static string SelectaRole => Resource.SelectaRole;
+        public static string PasswordCharacteres => Resource.PasswordCharacteres;
+        public static string EnteraPasswordConfirm => Resource.EnteraPasswordConfirm;
+        public static string PasswordandConfirmDoesNotMatch => Resource.PasswordandConfirmDoesNotMatch;
+        public static string RemembePassword => Resource.RemembePassword;
+        public static string Password => Resource.Password;
+        public static string Email => Resource.Email;
+        public static string ForgotyourPassword => Resource.ForgotyourPassword;
+        public static string Login => Resource.Login;
+        public static string Register => Resource.Register;
+        public static string EditPet => Resource.EditPet;
+        
+   
+
+
+
+
     }
 }

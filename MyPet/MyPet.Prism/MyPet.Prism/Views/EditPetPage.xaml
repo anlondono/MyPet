@@ -134,14 +134,6 @@
                     IsEnabled="{Binding IsEnabled}"
                     Text=" Save}"
                     />
-
-                <Button
-                    Command="{Binding DeleteCommand}"
-                    IsEnabled="{Binding IsEnabled}"
-                    IsVisible="{Binding IsEdit}"
-                    Style="{StaticResource dangerButton}"
-                    Text="Delete}"
-                    />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

@@ -1,6 +1,8 @@
 ﻿using MyPet.Common.Helpers;
 using MyPet.Common.Models;
 using MyPet.Common.Services;
+using MyPet.Prism.Helpers;
+using MyPet.Prism.Resources;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -100,11 +102,11 @@ namespace MyPet.Prism.ViewModels
 
             if (!response.IsSuccess)
             {
-                await App.Current.MainPage.DisplayAlert("Error", response.Message, "Accept");
+                await App.Current.MainPage.DisplayAlert(Languages.Error, response.Message, Languages.Accept);
                 return;
             }
 
-            await App.Current.MainPage.DisplayAlert("Ok", response.Message, "Accept");
+            await App.Current.MainPage.DisplayAlert("Ok", response.Message, Languages.Accept);
             await _navigationService.GoBackAsync();
         }
 
@@ -112,67 +114,90 @@ namespace MyPet.Prism.ViewModels
         {
             if (string.IsNullOrEmpty(Document))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "You must enter a document.", "Accept");
+                await App.Current.MainPage.DisplayAlert(
+                    Languages.Error,
+                    Languages.EnteraDocument,
+                    Languages.Accept);
                 return false;
             }
 
             if (string.IsNullOrEmpty(FirstName))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "You must enter a first name.", "Accept");
+                await App.Current.MainPage.DisplayAlert(Languages.Error,
+                     Resource.EnteraName,
+                    Languages.Accept);
                 return false;
             }
 
             if (string.IsNullOrEmpty(LastName))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "You must enter a last name.", "Accept");
+                await App.Current.MainPage.DisplayAlert(Languages.Error,
+                    Resource.EnterLastName,
+                    Languages.Accept);
                 return false;
             }
 
             if (string.IsNullOrEmpty(Address))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "You must enter an address.", "Accept");
+                await App.Current.MainPage.DisplayAlert(Languages.Error,
+                    Resource.EnterAddress, 
+                    Languages.Accept);
                 return false;
             }
 
             if (string.IsNullOrEmpty(Email) || !RegexHelper.IsValidEmail(Email))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "You must enter a valid email.", "Accept");
+                await App.Current.MainPage.DisplayAlert(Languages.Error,
+                    Resource.EenterValidEmail,
+                    Languages.Accept);
                 return false;
             }
 
             if (string.IsNullOrEmpty(Phone))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "You must enter a phonenumber.", "Accept");
+                await App.Current.MainPage.DisplayAlert(Languages.Error,
+                     Resource.EnteraPhonenumber, 
+                    Languages.Accept);
                 return false;
             }
 
             if (Role == null)
             {
-                await App.Current.MainPage.DisplayAlert("Error", "You must select a role.", "Accept");
+                await App.Current.MainPage.DisplayAlert(Languages.Error,
+                    Resource.SelectaRole,
+                    Languages.Accept);
                 return false;
             }
 
             if (string.IsNullOrEmpty(Password))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "You must enter a password.", "Accept");
+                await App.Current.MainPage.DisplayAlert(Languages.Error,
+                    Resource.EnteraPassword,
+                    Languages.Accept);
                 return false;
             }
 
             if (Password.Length < 6)
             {
-                await App.Current.MainPage.DisplayAlert("Error", "The password must have at least 6 charactes length.", "Accept");
+                await App.Current.MainPage.DisplayAlert(Languages.Error,
+                    Resource.PasswordCharacteres, 
+                    Languages.Accept);
                 return false;
             }
 
             if (string.IsNullOrEmpty(PasswordConfirm))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "You must enter a password confirm.", "Accept");
+                await App.Current.MainPage.DisplayAlert(Languages.Error,
+                    Resource.EnteraPasswordConfirm,
+                    Languages.Accept);
                 return false;
             }
 
             if (!Password.Equals(PasswordConfirm))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "The password and confirm does not match.", "Accept");
+                await App.Current.MainPage.DisplayAlert(Languages.Error,
+                    Resource.PasswordandConfirmDoesNotMatch,
+                    Languages.Accept);
                 return false;
             }
 

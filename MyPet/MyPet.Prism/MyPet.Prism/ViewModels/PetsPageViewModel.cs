@@ -1,6 +1,8 @@
 ﻿using MyPet.Common.Helpers;
 using MyPet.Common.Models;
 using MyPet.Common.Services;
+using MyPet.Prism.Helpers;
+using MyPet.Prism.Resources;
 using Newtonsoft.Json;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -33,7 +35,7 @@ namespace MyPet.Prism.ViewModels
             _navigationService = navigationService;
             _apiService = apiService;
             _instance = this;
-            Title = "Pets";
+            Title = Languages.Pets;
             LoadOwner();
         }
 
@@ -96,7 +98,7 @@ namespace MyPet.Prism.ViewModels
             }
             else
             {
-                Title = "Chandas dispobibles";
+                Title = Resource.PetsAvailable;
                 Icon = string.Empty;
             }
 

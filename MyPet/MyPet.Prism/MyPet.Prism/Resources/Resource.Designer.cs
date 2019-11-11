@@ -88,11 +88,56 @@ namespace MyPet.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Check the internet connection.
+        /// </summary>
+        internal static string CheckConnection {
+            get {
+                return ResourceManager.GetString("CheckConnection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirm.
         /// </summary>
         internal static string Confirm {
             get {
                 return ResourceManager.GetString("Confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        internal static string Details {
+            get {
+                return ResourceManager.GetString("Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Pet.
+        /// </summary>
+        internal static string EditPet {
+            get {
+                return ResourceManager.GetString("EditPet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must enter a valid email.
+        /// </summary>
+        internal static string EenterValidEmail {
+            get {
+                return ResourceManager.GetString("EenterValidEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        internal static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
             }
         }
         
@@ -106,6 +151,78 @@ namespace MyPet.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You must enter an address.
+        /// </summary>
+        internal static string EnterAddress {
+            get {
+                return ResourceManager.GetString("EnterAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must enter a document.
+        /// </summary>
+        internal static string EnteraDocument {
+            get {
+                return ResourceManager.GetString("EnteraDocument", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must enter a first name.
+        /// </summary>
+        internal static string EnteraName {
+            get {
+                return ResourceManager.GetString("EnteraName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must enter an email.
+        /// </summary>
+        internal static string EnteranEmail {
+            get {
+                return ResourceManager.GetString("EnteranEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must enter a password.
+        /// </summary>
+        internal static string EnteraPassword {
+            get {
+                return ResourceManager.GetString("EnteraPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must enter a password confirm.
+        /// </summary>
+        internal static string EnteraPasswordConfirm {
+            get {
+                return ResourceManager.GetString("EnteraPasswordConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must enter a phonenumber.
+        /// </summary>
+        internal static string EnteraPhonenumber {
+            get {
+                return ResourceManager.GetString("EnteraPhonenumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must enter a last name.
+        /// </summary>
+        internal static string EnterLastName {
+            get {
+                return ResourceManager.GetString("EnterLastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         internal static string Error {
@@ -115,11 +232,146 @@ namespace MyPet.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Forgot your password?.
+        /// </summary>
+        internal static string ForgotyourPassword {
+            get {
+                return ResourceManager.GetString("ForgotyourPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Camera.
+        /// </summary>
+        internal static string FromCamera {
+            get {
+                return ResourceManager.GetString("FromCamera", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From gallery.
+        /// </summary>
+        internal static string FromGallery {
+            get {
+                return ResourceManager.GetString("FromGallery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Getting the pet types list, please try later.
+        /// </summary>
+        internal static string GettingPetTypes {
+            get {
+                return ResourceManager.GetString("GettingPetTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        internal static string Login {
+            get {
+                return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Pet.
+        /// </summary>
+        internal static string NewPet {
+            get {
+                return ResourceManager.GetString("NewPet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No.
         /// </summary>
         internal static string No {
             get {
                 return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        internal static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The password and confirm does not match.
+        /// </summary>
+        internal static string PasswordandConfirmDoesNotMatch {
+            get {
+                return ResourceManager.GetString("PasswordandConfirmDoesNotMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The password must have at least 6 charactes length.
+        /// </summary>
+        internal static string PasswordCharacteres {
+            get {
+                return ResourceManager.GetString("PasswordCharacteres", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pets.
+        /// </summary>
+        internal static string Pets {
+            get {
+                return ResourceManager.GetString("Pets", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pets Available.
+        /// </summary>
+        internal static string PetsAvailable {
+            get {
+                return ResourceManager.GetString("PetsAvailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register.
+        /// </summary>
+        internal static string Register {
+            get {
+                return ResourceManager.GetString("Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remember Password.
+        /// </summary>
+        internal static string RemembePassword {
+            get {
+                return ResourceManager.GetString("RemembePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must select a role.
+        /// </summary>
+        internal static string SelectaRole {
+            get {
+                return ResourceManager.GetString("SelectaRole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Where do you want to get the picture from?.
+        /// </summary>
+        internal static string Wherepicturefrom {
+            get {
+                return ResourceManager.GetString("Wherepicturefrom", resourceCulture);
             }
         }
         
