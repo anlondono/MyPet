@@ -28,7 +28,7 @@ namespace MyPet.Prism.ViewModels
         {
             _navigationService = navigationService;
             _apiService = apiService;
-            Title = "Register new user";
+            Title = Languages.RegisterNewUser;
             IsEnabled = true;
             LoadRoles();
         }

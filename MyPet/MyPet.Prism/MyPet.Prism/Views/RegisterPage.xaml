@@ -3,6 +3,7 @@
     x:Class="MyPet.Prism.Views.RegisterPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:i18n="clr-namespace:MyPet.Prism.Helpers"
     xmlns:prism="http://prismlibrary.com"
     Title="{Binding Title}"
     prism:ViewModelLocator.AutowireViewModel="True"
@@ -25,7 +26,7 @@
                     <Label
                         Grid.Row="0"
                         Grid.Column="0"
-                        Text="Document"
+                        Text="{i18n:Translate Document}"
                         VerticalOptions="Center"
                         />
                     <Entry

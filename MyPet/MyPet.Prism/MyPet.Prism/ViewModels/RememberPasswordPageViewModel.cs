@@ -96,7 +96,7 @@ namespace MyPet.Prism.ViewModels
             {
                 await App.Current.MainPage.DisplayAlert(
                     Languages.Error,
-                    "You must enter a valid email.",
+                    Languages.EenterValidEmail,
                     Languages.Accept);
                 return false;
             }

@@ -27,7 +27,7 @@ namespace MyPet.Prism.Helpers
         public static string Yes => Resource.Yes;
         public static string No => Resource.No;
         public static string NewPet => Resource.NewPet;
-        public static string CheckConnection=> Resource.CheckConnection;
+        public static string CheckConnection => Resource.CheckConnection;
         public static string GettingPetTypes => Resource.GettingPetTypes;
         public static string Wherepicturefrom => Resource.Wherepicturefrom;
         public static string FromGallery => Resource.FromGallery;
@@ -54,8 +54,19 @@ namespace MyPet.Prism.Helpers
         public static string Login => Resource.Login;
         public static string Register => Resource.Register;
         public static string EditPet => Resource.EditPet;
-        
-   
+        public static string BigproblemCallSupport => Resource.BigproblemCallSupport;
+        public static string MyPets => Resource.MyPets;
+        public static string ModifyProfile => Resource.ModifyProfile;
+        public static string Logout => Resource.Logout;
+        public static string SuccessfulRequest => Resource.SuccessfulRequest;
+        public static string SelectHousing => Resource.SelectHousing;
+        public static string RegisterNewUser => Resource.RegisterNewUser;
+        public static string Document => Resource.RegisterNewUser;
+
+
+
+
+
 
 
 

@@ -131,7 +131,9 @@ namespace MyPet.Prism.ViewModels
             {
                 IsRunning = false;
                 IsEnabled = true;
-                await App.Current.MainPage.DisplayAlert("Error", "This user have a big problem, call support.", "Accept");
+                await App.Current.MainPage.DisplayAlert(Languages.Error,
+                    Languages.BigproblemCallSupport,
+                    Languages.Accept);
                 return;
             }
 

@@ -225,4 +225,28 @@
   <data name="EditPet" xml:space="preserve">
     <value>编辑</value>
   </data>
+  <data name="BigproblemCallSupport" xml:space="preserve">
+    <value>该用户有大问题，请致电支持。</value>
+  </data>
+  <data name="MyPets" xml:space="preserve">
+    <value>我的</value>
+  </data>
+  <data name="ModifyProfile" xml:space="preserve">
+    <value>修改资料</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>注销</value>
+  </data>
+  <data name="SuccessfulRequest" xml:space="preserve">
+    <value>成功的请求</value>
+  </data>
+  <data name="SelectHousing" xml:space="preserve">
+    <value>选择住房类型！</value>
+  </data>
+  <data name="RegisterNewUser" xml:space="preserve">
+    <value>注册新用户为</value>
+  </data>
+  <data name="Document" xml:space="preserve">
+    <value>文档</value>
+  </data>
 </root>

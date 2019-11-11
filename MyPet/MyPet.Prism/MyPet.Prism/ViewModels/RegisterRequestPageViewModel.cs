@@ -190,7 +190,7 @@ namespace MyPet.Prism.ViewModels
 
             await App.Current.MainPage.DisplayAlert(
                 Languages.Confirm,
-                "Solicitud realizada con exito",
+                Languages.SuccessfulRequest,
                 Languages.Accept);
 
             await PetsPageViewModel.GetInstance().UpdateOwnerAsync();
@@ -203,7 +203,9 @@ namespace MyPet.Prism.ViewModels
             if (HouseType == null)
             {
                 await App.Current.MainPage.DisplayAlert(
-                    Languages.Error, "Poner mensaje de que falta tipo casa", Languages.Accept);
+                    Languages.Error,
+                    Languages.SelectHousing, 
+                    Languages.Accept);
                 return false;
             }
 

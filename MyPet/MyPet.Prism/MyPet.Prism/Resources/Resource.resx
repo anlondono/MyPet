@@ -225,4 +225,28 @@
   <data name="EditPet" xml:space="preserve">
     <value>Edit Pet</value>
   </data>
+  <data name="BigproblemCallSupport" xml:space="preserve">
+    <value>This user have a big problem, call support.</value>
+  </data>
+  <data name="MyPets" xml:space="preserve">
+    <value>My Pets</value>
+  </data>
+  <data name="ModifyProfile" xml:space="preserve">
+    <value>Modify Profile</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="SuccessfulRequest" xml:space="preserve">
+    <value>Successful request</value>
+  </data>
+  <data name="SelectHousing" xml:space="preserve">
+    <value>Select the type of housing</value>
+  </data>
+  <data name="RegisterNewUser" xml:space="preserve">
+    <value>Register new user</value>
+  </data>
+  <data name="Document" xml:space="preserve">
+    <value>Document</value>
+  </data>
 </root>

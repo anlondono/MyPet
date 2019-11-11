@@ -225,4 +225,28 @@
   <data name="EditPet" xml:space="preserve">
     <value>Mettre à jour animal</value>
   </data>
+  <data name="BigproblemCallSupport" xml:space="preserve">
+    <value>Cet utilisateur a un gros problème, appelez le support technique!</value>
+  </data>
+  <data name="MyPets" xml:space="preserve">
+    <value>Mes animaux de compagnie!</value>
+  </data>
+  <data name="ModifyProfile" xml:space="preserve">
+    <value>Modifier Profil</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>déconnexion</value>
+  </data>
+  <data name="SuccessfulRequest" xml:space="preserve">
+    <value>Requête réussie</value>
+  </data>
+  <data name="SelectHousing" xml:space="preserve">
+    <value>Sélectionnez le type de logement!</value>
+  </data>
+  <data name="RegisterNewUser" xml:space="preserve">
+    <value>Enregistrer un nouvel utilisateur</value>
+  </data>
+  <data name="Document" xml:space="preserve">
+    <value>Document</value>
+  </data>
 </root>

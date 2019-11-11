@@ -32,75 +32,87 @@ namespace MyPet.Web.Controllers.API
         [HttpPost]
         public async Task<IActionResult> PostUser([FromBody] UserRequest request)
         {
-            if (!ModelState.IsValid)
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(new Response<object>
+                    {
+                        IsSuccess = false,
+                        Message = "Bad request"
+                    });
+                }
+
+                var user = await _userHelper.GetUserByEmailAsync(request.Email);
+                if (user != null)
+                {
+                    return BadRequest(new Response<object>
+                    {
+                        IsSuccess = false,
+                        Message = "This email is already registered."
+                    });
+                }
+
+                user = new User
+                {
+                    Address = request.Address,
+                    Document = request.Document,
+                    Email = request.Email,
+                    FirstName = request.FirstName,
+                    LastName = request.LastName,
+                    PhoneNumber = request.Phone,
+                    CellPhone = request.Phone,
+                    UserName = request.Email,
+                    IsAdopter = request.RoleId == 2,
+                    IsOwner = request.RoleId == 1
+                };
+
+                var result = await _userHelper.AddUserAsync(user, request.Password);
+                if (result != IdentityResult.Success)
+                {
+                    return BadRequest(result.Errors.FirstOrDefault().Description);
+                }
+
+                var userNew = await _userHelper.GetUserByEmailAsync(request.Email);
+
+                if (user.IsOwner)
+                {
+                    await _userHelper.AddUserToRoleAsync(userNew, "Owner");
+                    _dataContext.TemporaryOwners.Add(new TemporaryOwner { User = userNew });
+                }
+                else
+                {
+                    await _userHelper.AddUserToRoleAsync(userNew, "Adopter");
+                    _dataContext.Adopters.Add(new Adopter { User = userNew });
+                }
+
+                await _dataContext.SaveChangesAsync();
+
+                var myToken = await _userHelper.GenerateEmailConfirmationTokenAsync(user);
+                var tokenLink = Url.Action("ConfirmEmail", "Account", new
+                {
+                    userid = user.Id,
+                    token = myToken
+                }, protocol: HttpContext.Request.Scheme);
+
+                _mailHelper.SendMail(request.Email, "Email confirmation", $"<h1>Email Confirmation</h1>" +
+                    $"To allow the user, " +
+                    $"please click on this link:</br></br><a href = \"{tokenLink}\">Confirm Email</a>");
+
+                return Ok(new Response<object>
+                {
+                    IsSuccess = true,
+                    Message = "A Confirmation email was sent. Please confirm your account and log into the App."
+                });
+            }
+            catch (System.Exception ex)
             {
                 return BadRequest(new Response<object>
                 {
                     IsSuccess = false,
-                    Message = "Bad request"
+                    Message = "Oops! something is broken!"
                 });
             }
-
-            var user = await _userHelper.GetUserByEmailAsync(request.Email);
-            if (user != null)
-            {
-                return BadRequest(new Response<object>
-                {
-                    IsSuccess = false,
-                    Message = "This email is already registered."
-                });
-            }
-
-            user = new User
-            {
-                Address = request.Address,
-                Document = request.Document,
-                Email = request.Email,
-                FirstName = request.FirstName,
-                LastName = request.LastName,
-                PhoneNumber = request.Phone,
-                UserName = request.Email,
-                IsAdopter = request.RoleId == 2,
-                IsOwner = request.RoleId == 1
-            };
-
-            var result = await _userHelper.AddUserAsync(user, request.Password);
-            if (result != IdentityResult.Success)
-            {
-                return BadRequest(result.Errors.FirstOrDefault().Description);
-            }
-
-            var userNew = await _userHelper.GetUserByEmailAsync(request.Email);
-
-            if (user.IsOwner)
-            {
-                await _userHelper.AddUserToRoleAsync(userNew, "Owner");
-                _dataContext.TemporaryOwners.Add(new TemporaryOwner { User = userNew });
-            }
-            else
-            {
-                await _userHelper.AddUserToRoleAsync(userNew, "Adopter");
-                _dataContext.Adopters.Add(new Adopter { User = userNew });
-            }
-
-            await _dataContext.SaveChangesAsync();
-
-            var myToken = await _userHelper.GenerateEmailConfirmationTokenAsync(user);
-            var tokenLink = Url.Action("ConfirmEmail", "Account", new
-            {
-                userid = user.Id,
-                token = myToken
-            }, protocol: HttpContext.Request.Scheme);
-
-            _mailHelper.SendMail(request.Email, "Email confirmation", $"<h1>Email Confirmation</h1>" +
-                $"To allow the user, " +
-                $"please click on this link:</br></br><a href = \"{tokenLink}\">Confirm Email</a>");
-
-            return Ok(new Response<object>
-            {
-                IsSuccess = true,
-                Message = "A Confirmation email was sent. Please confirm your account and log into the App."
-            });
         }
 
         [HttpPost]

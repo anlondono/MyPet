@@ -1,4 +1,5 @@
 ﻿using MyPet.Common.Models;
+using MyPet.Prism.Helpers;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -30,21 +31,21 @@ namespace MyPet.Prism.ViewModels
                 {
                     Icon = "ic_pets_menu",
                     PageName = "PetsPage",
-                    Title = "My Pets"
+                    Title = Languages.MyPets
                 },
 
                 new Menu
                 {
                     Icon = "ic_person",
                     PageName = "ProfilePage",
-                    Title = "Modify Profile"
+                    Title = Languages.ModifyProfile
                 },
 
                 new Menu
                 {
                     Icon = "ic_exit_to_app",
                     PageName = "LoginPage",
-                    Title = "Logout"
+                    Title = Languages.Logout
                 }
             };
 
