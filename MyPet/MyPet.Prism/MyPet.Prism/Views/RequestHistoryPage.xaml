@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MyPet.Prism.Views.RequestHistoryPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    Title="{Binding Title}"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    BackgroundColor="{StaticResource colorBackgroud}"
+    >
+    <ScrollView>
+        <StackLayout Padding="10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    Text="Pet"
+                    />
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Text="{Binding History.Pet}"
+                    />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    Text="Date"
+                    />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="{Binding History.DateLocal}"
+                    />
+
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    Text="Tiene Hijos"
+                    />
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Text="{Binding History.HasKids}"
+                    />
+
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    Text="Tiene pets"
+                    />
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Text="{Binding History.HasPets}"
+                    />
+
+                <Label
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    Text="tipo casa"
+                    />
+                <Label
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Text="{Binding History.HouseType}"
+                    />
+
+                <Label
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    Text="Adopter"
+                    />
+                <Label
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    Text="{Binding History.Adopter}"
+                    />
+
+                <Label
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    Text="Celular Adopter"
+                    />
+                <Label
+                    Grid.Row="6"
+                    Grid.Column="1"
+                    Text="{Binding History.Telephone}"
+                    />
+
+                <Label
+                    Grid.Row="7"
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    Text="Description"
+                    />
+                <Label
+                    Grid.Row="7"
+                    Grid.Column="1"
+                    Text="{Binding History.Observation}"
+                    />
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -20,7 +20,7 @@
                 <Image HeightRequest="180" Source="logo" />
                 <Label Text="{i18n:Translate Email}" />
                 <Entry
-                    Keyboard="{i18n:Translate Email}"
+                    Keyboard="Email"
                     Placeholder="{i18n:Translate EnteranEmail}"
                     ReturnType="Next"
                     Text="{Binding Email}"
@@ -56,24 +56,11 @@
                     <Button
                         Command="{Binding RegisterCommand}"
                         IsEnabled="{Binding IsEnabled}"
-                        Style="{StaticResource secondaryButton}"
                         Text="{i18n:Translate Register}"
                         />
                 </StackLayout>
                 <ActivityIndicator IsRunning="{Binding IsRunning}" />
             </StackLayout>
-            <!--<busyindicator:SfBusyIndicator
-                AnimationType="Gear"
-                AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"
-                AbsoluteLayout.LayoutFlags="All"
-                BackgroundColor="{StaticResource colorDanger}"
-                HorizontalOptions="Center"
-                TextColor="{StaticResource colorFontInverse}"
-                IsVisible="{Binding IsRunning}"
-                Title="Loading..."
-                VerticalOptions="Center"
-                ViewBoxWidth="80"
-                ViewBoxHeight="80" />-->
         </AbsoluteLayout>
     </ScrollView>
 </ContentPage>

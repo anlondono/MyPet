@@ -1,4 +1,6 @@
-﻿namespace MyPet.Common.Models
+﻿using System.Collections.Generic;
+
+namespace MyPet.Common.Models
 {
     public class PetResponse
     {
@@ -17,5 +19,7 @@
         public bool IsAvailable { get; set; }
 
         public string PetType { get; set; }
+
+        public ICollection<HistoryRequestResponse> HistoryRequests { get; set; }
     }
 }

@@ -31,7 +31,7 @@ namespace MyPet.Prism.ViewModels
                 {
                     Icon = "ic_pets_menu",
                     PageName = "PetsPage",
-                    Title = Languages.MyPets
+                    Title = "Solicitudes"
                 },
 
                 new Menu

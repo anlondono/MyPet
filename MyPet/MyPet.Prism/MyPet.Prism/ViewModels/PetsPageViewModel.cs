@@ -112,6 +112,8 @@ namespace MyPet.Prism.ViewModels
                     Race = p.Race,
                     Description = p.Description,
                     Age = p.Age,
+                    HistoryRequests = p.HistoryRequests,
+                    IsAvailable = p.IsAvailable,
                 }).ToList());
         }
 

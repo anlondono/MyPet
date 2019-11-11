@@ -53,6 +53,8 @@ namespace MyPet.Prism
             containerRegistry.RegisterForNavigation<EditPetPage, EditPetPageViewModel>();
             containerRegistry.RegisterForNavigation<RegisterRequestPage, RegisterRequestPageViewModel>();
             containerRegistry.RegisterForNavigation<PetTabbedPage, PetTabbedPageViewModel>();
+            containerRegistry.RegisterForNavigation<RequestHistoriesPage, RequestHistoriesPageViewModel>();
+            containerRegistry.RegisterForNavigation<RequestHistoryPage, RequestHistoryPageViewModel>();
         }
     }
 }

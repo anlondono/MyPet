@@ -51,6 +51,7 @@
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
 
                             <Label
@@ -112,19 +113,30 @@
                             <Label
                                 Grid.Row="4"
                                 Grid.Column="0"
+                                Text="Is Available}"
+                                VerticalOptions="Center"
+                                />
+
+                            <CheckBox
+                                Grid.Row="4"
+                                Grid.Column="1"
+                                IsChecked="{Binding IsAvailable}"
+                                />
+
+                            <Label
+                                Grid.Row="5"
+                                Grid.Column="0"
                                 Text=" Description}"
                                 VerticalOptions="Center"
                                 />
                             <Editor
-                                Grid.Row="4"
+                                Grid.Row="5"
                                 Grid.Column="1"
                                 HeightRequest="80"
                                 Text="{Binding Pet.Description}"
                                 />
                         </Grid>
-
                     </StackLayout>
-
                 </AbsoluteLayout>
             </ScrollView>
             <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">

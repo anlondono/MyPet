@@ -15,7 +15,7 @@
             <x:String x:Key="UrlAPI">https://mypetapp.azurewebsites.net/</x:String>
 
             <!--  Colors  -->
-            <Color x:Key="colorBackgroud">#BDBDBD</Color>
+            <Color x:Key="colorBackgroud">#ffffff</Color>
             <Color x:Key="colorPrimary">#9C27B0</Color>
             <Color x:Key="colorSecondary">#7B1FA2</Color>
             <Color x:Key="colorDanger">#F2055C</Color>
@@ -34,15 +34,12 @@
                 <Setter Property="BackgroundColor" Value="{StaticResource colorPrimary}" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
                 <Setter Property="TextColor" Value="{StaticResource colorFontInverse}" />
+                <Setter Property="CornerRadius" Value="15" />
             </Style>
 
             <Style x:Key="secondaryButton" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="{StaticResource colorSecondary}" />
-            </Style>
-
-            <Style x:Key="dangerButton" TargetType="Button">
-                <Setter Property="BackgroundColor" Value="{StaticResource colorDanger}" />
-                <Setter Property="TextColor" Value="{StaticResource colorFontInverse}" />
+                <Setter Property="CornerRadius" Value="15" />
             </Style>
 
             <Style TargetType="Label">

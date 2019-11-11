@@ -7,9 +7,12 @@
     xmlns:prism="http://prismlibrary.com"
     Title="{Binding Title}"
     prism:ViewModelLocator.AutowireViewModel="True"
+    BarBackgroundColor="{StaticResource colorSecondary}"
+    BarTextColor="White"
     >
     <TabbedPage.Children>
         <local:PetPage />
+        <local:RequestHistoriesPage />
     </TabbedPage.Children>
 
 </TabbedPage>

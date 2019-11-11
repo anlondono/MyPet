@@ -178,10 +178,10 @@
     <value>Debe ingresar un documento!</value>
   </data>
   <data name="EnteraName" xml:space="preserve">
-    <value>- Debe escribir un nombre</value>
+    <value>Debe escribir un nombre</value>
   </data>
   <data name="EnterLastName" xml:space="preserve">
-    <value>- Debe escribir apellidos</value>
+    <value>Debe escribir apellidos</value>
   </data>
   <data name="EnterAddress" xml:space="preserve">
     <value>Debe especificar una dirección.</value>
@@ -217,7 +217,7 @@
     <value>¿Olvidó la contraseña?</value>
   </data>
   <data name="Login" xml:space="preserve">
-    <value>&amp;Iniciar sesión</value>
+    <value>Iniciar sesión</value>
   </data>
   <data name="Register" xml:space="preserve">
     <value>Registrar...</value>
@@ -235,7 +235,7 @@
     <value>Modificar perfil</value>
   </data>
   <data name="Logout" xml:space="preserve">
-    <value>cerrar sesión</value>
+    <value>Cerrar sesión</value>
   </data>
   <data name="SuccessfulRequest" xml:space="preserve">
     <value>Solicitud realizada con exito!</value>

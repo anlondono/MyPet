@@ -25,12 +25,12 @@ namespace MyPet.Prism.ViewModels
         private bool _isRunning;
         private bool _isEnabled;
         private bool _isEdit;
+        private bool _isAvailable;
         private ObservableCollection<PetTypeResponse> _petTypes;
         private PetTypeResponse _petType;
         private MediaFile _file;
         private DelegateCommand _changeImageCommand;
         private DelegateCommand _saveCommand;
-        private DelegateCommand _deleteCommand;
 
         public EditPetPageViewModel(
             INavigationService navigationService,
@@ -69,6 +69,12 @@ namespace MyPet.Prism.ViewModels
             set => SetProperty(ref _isEdit, value);
         }
 
+        public bool IsAvailable
+        {
+            get => _isAvailable;
+            set => SetProperty(ref _isAvailable, value);
+        }
+
         public bool IsEnabled
         {
             get => _isEnabled;
@@ -97,6 +103,7 @@ namespace MyPet.Prism.ViewModels
                 ImageSource = Pet.ImageUrl;
                 IsEdit = true;
                 Title = Languages.EditPet;
+                IsAvailable = Pet.IsAvailable;
             }
             else
             {
@@ -232,7 +239,7 @@ namespace MyPet.Prism.ViewModels
                 PetTypeId = PetType.Id,
                 Race = Pet.Race,
                 Description = Pet.Description,
-                IsAvailable = Pet.IsAvailable
+                IsAvailable = IsAvailable,
             };
 
             Response<object> response;
