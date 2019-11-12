@@ -5,15 +5,15 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:prism="http://prismlibrary.com"
     prism:ViewModelLocator.AutowireViewModel="True"
-    BackgroundColor="{StaticResource colorBackgroud}"
+    BackgroundColor="{StaticResource colorPrimary}"
     >
 
     <MasterDetailPage.Master>
-        <ContentPage Title="Menu">
+        <ContentPage Title="Menu" BackgroundColor="{StaticResource colorPrimary}">
             <StackLayout Padding="20">
                 <Image HeightRequest="150" Source="logo" />
                 <ListView
-                    BackgroundColor="Transparent"
+                    BackgroundColor="{StaticResource colorPrimary}"
                     HasUnevenRows="True"
                     ItemsSource="{Binding Menus}"
                     SeparatorVisibility="None"
@@ -38,7 +38,9 @@
                                     <Label
                                         Grid.Column="1"
                                         FontAttributes="Bold"
+                                        FontSize="Medium"
                                         Text="{Binding Title}"
+                                        TextColor="White"
                                         VerticalOptions="Center"
                                         />
                                 </Grid>

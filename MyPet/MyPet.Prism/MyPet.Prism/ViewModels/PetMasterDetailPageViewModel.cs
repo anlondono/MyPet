@@ -29,8 +29,14 @@ namespace MyPet.Prism.ViewModels
             {
                 new Menu
                 {
-                    Icon = "ic_pets_menu",
+                    Icon = "ic_home",
                     PageName = "PetsPage",
+                    Title = "Home"
+                },
+                new Menu
+                {
+                    Icon = "ic_request",
+                    PageName = "RequestHistoriesPage",
                     Title = "Solicitudes"
                 },
 

@@ -125,7 +125,6 @@ namespace MyPet.Web.Controllers.API
                 .Include(pt => pt.PetType)
                 .Include(pt => pt.Requests)
                 .ThenInclude(o => o.HouseType)
-
                 .Where(p => p.IsAvailable)
                 .ToListAsync();
             var response = new TemporaryOwnerResponse
@@ -149,7 +148,9 @@ namespace MyPet.Web.Controllers.API
                     Description = p.Description,
                     PetType = p.PetType.Name,
                     IsAvailable = p.IsAvailable,
-                    HistoryRequests = p.Requests.Select(h => new HistoryRequestResponse
+                    HistoryRequests = p.Requests
+                    .Where(where => where.Adopter!= null && where.Adopter.User.UserName.ToLower() == emailRequest.Email.ToLower())
+                    .Select(h => new HistoryRequestResponse
                     {
                         Active = h.Active,
                         Adopter = adopter.User.FullName,

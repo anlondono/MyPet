@@ -176,13 +176,13 @@ namespace MyPet.Prism.ViewModels
                 Languages.FromGallery,
                 Languages.FromCamera);
 
-            if (source == "Cancel")
+            if (source == Languages.Cancel)
             {
                 _file = null;
                 return;
             }
 
-            if (source == "From Camera")
+            if (source == Languages.FromCamera)
             {
                 _file = await CrossMedia.Current.TakePhotoAsync(
                     new StoreCameraMediaOptions
@@ -193,8 +193,9 @@ namespace MyPet.Prism.ViewModels
                     }
                 );
             }
-            else
+            else if (source == Languages.FromGallery)
             {
+
                 _file = await CrossMedia.Current.PickPhotoAsync();
             }
 

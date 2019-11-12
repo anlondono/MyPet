@@ -28,18 +28,55 @@ namespace MyPet.Web.Controllers.API
         // GET: api/Requests
         [HttpGet]
         [Route("Adopter/{id}")]
-        public IEnumerable<Request> GetRequestsAdopter([FromRoute] int id)
+        public IEnumerable<HistoryRequestResponse> GetRequestsAdopter([FromRoute] int id)
         {
-            return _context.Requests.Where(r => r.Active && r.Adopter.Id == id);
+            var data = _context.Requests.Where(r => r.Adopter.Id == id)
+                .Include(o => o.Pet)
+                .Include(o=> o.HouseType)
+                .Include(o => o.Adopter)
+                .ThenInclude(o => o.User);
+            return data.Select(h => new HistoryRequestResponse
+            {
+                Active = h.Active,
+                Adopter = h.Adopter.User.FullName,
+                Date = h.Date,
+                Denied = h.Denied,
+                HasKids = h.HasKids,
+                HasPets = h.HasOthePets,
+                HouseType = h.HouseType.Name,
+                Observation = h.Observation,
+                Pet = h.Pet.Name,
+                RequestId = h.Id,
+                Telephone = h.Adopter.User.CellPhone,
+            }).ToList();
         }
         // GET: api/Requests
         [HttpGet]
         [Route("Owner/{id}")]
-        public IEnumerable<Request> GetRequestsOwner([FromRoute] int id)
+        public IEnumerable<HistoryRequestResponse> GetRequestsOwner([FromRoute] int id)
         {
-            return _context.Requests.Where(r => r.Active && r.Pet.TemporaryOwner.Id == id);
+            var data = _context.Requests
+                .Where(r => r.Pet.TemporaryOwner.Id == id)
+                .Include(o => o.Pet)
+                .Include(o => o.HouseType)
+                .Include(o => o.Adopter)
+                .ThenInclude(o => o.User);
+            return data.Select(h => new HistoryRequestResponse
+            {
+                Active = h.Active,
+                Adopter = h.Adopter.User.FullName,
+                Date = h.Date,
+                Denied = h.Denied,
+                HasKids = h.HasKids,
+                HasPets = h.HasOthePets,
+                HouseType = h.HouseType.Name,
+                Observation = h.Observation,
+                Pet = h.Pet.Name,
+                RequestId = h.Id,
+                Telephone = h.Adopter.User.CellPhone,
+            }).ToList();
         }
-        
+
         [HttpPost]
         [Route("Create")]
         public async Task<IActionResult> PostRequest([FromBody] AskingPetRequest request)

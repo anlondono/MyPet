@@ -1,4 +1,5 @@
-﻿using MyPet.Common.Helpers;
+﻿using DryIoc;
+using MyPet.Common.Helpers;
 using MyPet.Common.Models;
 using Prism.Commands;
 using Prism.Navigation;
@@ -25,8 +26,15 @@ namespace MyPet.Prism.ViewModels
             if (PageName.Equals("LoginPage"))
             {
                 Settings.IsRemembered = false;
+                Settings.Owner = null;
+                Settings.Pet = null;
                 await _navigationService.NavigateAsync("/NavigationPage/LoginPage");
                 return;
+            }
+
+            if (PageName.Equals("RequestHistoriesPage"))
+            {
+                Settings.Pet = null;
             }
 
             await _navigationService.NavigateAsync($"/PetMasterDetailPage/NavigationPage/{PageName}");

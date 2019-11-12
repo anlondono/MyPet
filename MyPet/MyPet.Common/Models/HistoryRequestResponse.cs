@@ -28,6 +28,11 @@ namespace MyPet.Common.Models
 
         public bool Denied { get; set; }
 
+        public string WasDenied  { get; set; }
+        public string IsActive  { get; set; }
+        public string HasKidsStr  { get; set; }
+        public string HasPetsStr  { get; set; }
+
         public DateTime DateLocal => Date.ToLocalTime();
     }
 }

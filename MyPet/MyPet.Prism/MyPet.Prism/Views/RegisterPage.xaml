@@ -152,8 +152,8 @@
                     Text="Register"
                     VerticalOptions="EndAndExpand"
                     />
+                <ActivityIndicator IsRunning="{Binding IsRunning}" />
             </StackLayout>
-            <ActivityIndicator IsRunning="{Binding IsRunning}" />
         </AbsoluteLayout>
     </ScrollView>
 </ContentPage>

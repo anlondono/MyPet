@@ -17,7 +17,7 @@
             <!--  Colors  -->
             <Color x:Key="colorBackgroud">#ffffff</Color>
             <Color x:Key="colorPrimary">#9C27B0</Color>
-            <Color x:Key="colorSecondary">#7B1FA2</Color>
+            <Color x:Key="colorSecondary">#9C27B0</Color>
             <Color x:Key="colorDanger">#F2055C</Color>
             <Color x:Key="colorAccent">#03A9F4</Color>
             <Color x:Key="colorFont">#757575</Color>
@@ -43,6 +43,7 @@
             </Style>
 
             <Style TargetType="Label">
+                <Setter Property="FontSize" Value="Medium" />
                 <Setter Property="TextColor" Value="{StaticResource colorFont}" />
             </Style>
 
