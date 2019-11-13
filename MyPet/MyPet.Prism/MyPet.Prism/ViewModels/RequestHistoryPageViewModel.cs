@@ -27,7 +27,7 @@ namespace MyPet.Prism.ViewModels
         {
             _apiService = apiService;
             _navigationService = navigationService;
-            Title = "History";
+            Title = Languages.History;
             IsEnabled = true;
         }
         public DelegateCommand DenyCommand => _denyCommand ??
@@ -147,7 +147,7 @@ namespace MyPet.Prism.ViewModels
 
             await App.Current.MainPage.DisplayAlert(
                 Languages.Accept,
-                "Aceptado con exito",
+               Languages.SuccessfullyAccepted,
                 Languages.Accept);
 
             await PetsPageViewModel.GetInstance().UpdateOwnerAsync();

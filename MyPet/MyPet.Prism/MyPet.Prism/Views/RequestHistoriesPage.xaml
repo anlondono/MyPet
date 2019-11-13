@@ -3,6 +3,7 @@
     x:Class="MyPet.Prism.Views.RequestHistoriesPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:i18n="clr-namespace:MyPet.Prism.Helpers"
     xmlns:prism="http://prismlibrary.com"
     Title="{Binding Title}"
     prism:ViewModelLocator.AutowireViewModel="True"
@@ -23,17 +24,17 @@
                 <Label
                     Grid.Column="0"
                     FontAttributes="Bold"
-                    Text="Date"
+                    Text="{i18n:Translate Date}"
                     />
                 <Label
                     Grid.Column="1"
                     FontAttributes="Bold"
-                    Text="Pet"
+                    Text="{i18n:Translate Pets}"
                     />
                 <Label
                     Grid.Column="2"
                     FontAttributes="Bold"
-                    Text="Adopter"
+                    Text="{i18n:Translate Adopter}"
                     />
             </Grid>
             <ListView HasUnevenRows="True" ItemsSource="{Binding Histories}">

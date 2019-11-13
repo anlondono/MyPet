@@ -31,13 +31,13 @@ namespace MyPet.Prism.ViewModels
                 {
                     Icon = "ic_home",
                     PageName = "PetsPage",
-                    Title = "Home"
+                    Title = Languages.Home
                 },
                 new Menu
                 {
                     Icon = "ic_request",
                     PageName = "RequestHistoriesPage",
-                    Title = "Solicitudes"
+                    Title = Languages.Requests
                 },
 
                 new Menu

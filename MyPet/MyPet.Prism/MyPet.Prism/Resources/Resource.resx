@@ -160,10 +160,10 @@
     <value>From Camera</value>
   </data>
   <data name="EnteranEmail" xml:space="preserve">
-    <value>You must enter an email</value>
+    <value>Enter an email</value>
   </data>
   <data name="EnteraPassword" xml:space="preserve">
-    <value>You must enter a password</value>
+    <value>Enter a password</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Details</value>
@@ -175,13 +175,13 @@
     <value>Pets Available</value>
   </data>
   <data name="EnteraDocument" xml:space="preserve">
-    <value>You must enter a document</value>
+    <value>Enter a document</value>
   </data>
   <data name="EnteraName" xml:space="preserve">
-    <value>You must enter a first name</value>
+    <value>Enter a first name</value>
   </data>
   <data name="EnterLastName" xml:space="preserve">
-    <value>You must enter a last name</value>
+    <value>Enter a last name</value>
   </data>
   <data name="EnterAddress" xml:space="preserve">
     <value>You must enter an address</value>
@@ -190,7 +190,7 @@
     <value>You must enter a valid email</value>
   </data>
   <data name="EnteraPhonenumber" xml:space="preserve">
-    <value>You must enter a phonenumber</value>
+    <value>Enter a phonenumber</value>
   </data>
   <data name="SelectaRole" xml:space="preserve">
     <value>You must select a role</value>
@@ -199,7 +199,7 @@
     <value>The password must have at least 6 charactes length</value>
   </data>
   <data name="EnteraPasswordConfirm" xml:space="preserve">
-    <value>You must enter a password confirm</value>
+    <value>Enter a password confirm</value>
   </data>
   <data name="PasswordandConfirmDoesNotMatch" xml:space="preserve">
     <value>The password and confirm does not match</value>
@@ -248,5 +248,116 @@
   </data>
   <data name="Document" xml:space="preserve">
     <value>Document</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="ThePasswordsDoesNotMatch" xml:space="preserve">
+    <value>The new password and the confirmation does not match</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="UserUpdatedSuccesfully" xml:space="preserve">
+    <value>User updated succesfully</value>
+  </data>
+  <data name="RequestAdoption" xml:space="preserve">
+    <value>Request Adoption</value>
+  </data>
+  <data name="Requests" xml:space="preserve">
+    <value>Requests</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="SuccessfullyAccepted" xml:space="preserve">
+    <value>Successfully Accepted</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Current password</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="RememberMeInThisDevice" xml:space="preserve">
+    <value>Remember Me In ThisDevice</value>
+  </data>
+  <data name="Firstname" xml:space="preserve">
+    <value>Firstname</value>
+  </data>
+  <data name="Lastname" xml:space="preserve">
+    <value>Lastname</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="RegisterAs" xml:space="preserve">
+    <value>Register As</value>
+  </data>
+  <data name="SelectRole" xml:space="preserve">
+    <value>Select a Role ...</value>
+  </data>
+  <data name="PasswordConfirm" xml:space="preserve">
+    <value>Password Confirm</value>
+  </data>
+  <data name="Race" xml:space="preserve">
+    <value>Race</value>
+  </data>
+  <data name="Age" xml:space="preserve">
+    <value>Age</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="PetType" xml:space="preserve">
+    <value>Pet Type</value>
+  </data>
+  <data name="IsAvailable" xml:space="preserve">
+    <value>Is Available</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ChangeImage" xml:space="preserve">
+    <value>Change Image</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Children" xml:space="preserve">
+    <value>Has children?</value>
+  </data>
+  <data name="HasPets" xml:space="preserve">
+    <value>Has Pets?</value>
+  </data>
+  <data name="TypeHousing" xml:space="preserve">
+    <value>Type of housing</value>
+  </data>
+  <data name="Adopter" xml:space="preserve">
+    <value>Adopter</value>
+  </data>
+  <data name="ItIsActive" xml:space="preserve">
+    <value>It is active?</value>
+  </data>
+  <data name="Rejected" xml:space="preserve">
+    <value>Rejected</value>
+  </data>
+  <data name="MakeRequest" xml:space="preserve">
+    <value>Make request</value>
+  </data>
+  <data name="Observations" xml:space="preserve">
+    <value>Observations</value>
+  </data>
+  <data name="ToRefuse" xml:space="preserve">
+    <value>To Refuse</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
   </data>
 </root>

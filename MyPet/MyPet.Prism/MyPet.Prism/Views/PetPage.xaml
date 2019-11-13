@@ -4,6 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:i18n="clr-namespace:MyPet.Prism.Helpers"
     xmlns:prism="http://prismlibrary.com"
     Title="{Binding Title}"
     prism:ViewModelLocator.AutowireViewModel="True"
@@ -41,7 +42,7 @@
                         Grid.Row="0"
                         Grid.Column="0"
                         FontAttributes="Bold"
-                        Text="Name"
+                        Text="{i18n:Translate Name}"
                         />
                     <Label
                         Grid.Row="0"
@@ -52,7 +53,7 @@
                         Grid.Row="1"
                         Grid.Column="0"
                         FontAttributes="Bold"
-                        Text="Race"
+                        Text="{i18n:Translate Race}"
                         />
                     <Label
                         Grid.Row="1"
@@ -63,7 +64,7 @@
                         Grid.Row="2"
                         Grid.Column="0"
                         FontAttributes="Bold"
-                        Text="Age"
+                        Text="{i18n:Translate Age}"
                         />
                     <Label
                         Grid.Row="2"
@@ -74,7 +75,7 @@
                         Grid.Row="3"
                         Grid.Column="0"
                         FontAttributes="Bold"
-                        Text="Pet Type"
+                        Text="{i18n:Translate PetType}"
                         />
                     <Label
                         Grid.Row="3"
@@ -98,13 +99,13 @@
         <Button
             Command="{Binding EditPetCommand}"
             IsVisible="{Binding IsOwner}"
-            Text="Edit Pet"
+            Text="{i18n:Translate EditPet}}"
             VerticalOptions="EndAndExpand"
             />
         <Button
             Command="{Binding RequestPetCommand}"
             IsVisible="{Binding IsAdopter}"
-            Text="Request Pet"
+            Text="{i18n:Translate MakeRequest}"
             VerticalOptions="EndAndExpand"
             />
     </StackLayout>

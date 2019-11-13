@@ -249,4 +249,115 @@
   <data name="Document" xml:space="preserve">
     <value>文档</value>
   </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>更改密码</value>
+  </data>
+  <data name="ThePasswordsDoesNotMatch" xml:space="preserve">
+    <value>密码和确认不匹配</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="UserUpdatedSuccesfully" xml:space="preserve">
+    <value>用户成功更新！</value>
+  </data>
+  <data name="RequestAdoption" xml:space="preserve">
+    <value>要求收养！</value>
+  </data>
+  <data name="Requests" xml:space="preserve">
+    <value>请求</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>历史记录</value>
+  </data>
+  <data name="SuccessfullyAccepted" xml:space="preserve">
+    <value>成功接受！</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>当前密码</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>新密码</value>
+  </data>
+  <data name="RememberMeInThisDevice" xml:space="preserve">
+    <value>在此设备中记住我！</value>
+  </data>
+  <data name="Firstname" xml:space="preserve">
+    <value>名字</value>
+  </data>
+  <data name="Lastname" xml:space="preserve">
+    <value>姓氏</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>地址</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>电话</value>
+  </data>
+  <data name="RegisterAs" xml:space="preserve">
+    <value>注册为</value>
+  </data>
+  <data name="SelectRole" xml:space="preserve">
+    <value>选择角色</value>
+  </data>
+  <data name="PasswordConfirm" xml:space="preserve">
+    <value>密码确认</value>
+  </data>
+  <data name="Race" xml:space="preserve">
+    <value>种族</value>
+  </data>
+  <data name="Age" xml:space="preserve">
+    <value>年龄</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名称:</value>
+  </data>
+  <data name="PetType" xml:space="preserve">
+    <value>类型</value>
+  </data>
+  <data name="IsAvailable" xml:space="preserve">
+    <value>可用。</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>说明:</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="ChangeImage" xml:space="preserve">
+    <value>更改图像</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>日期:</value>
+  </data>
+  <data name="Children" xml:space="preserve">
+    <value>有子项</value>
+  </data>
+  <data name="HasPets" xml:space="preserve">
+    <value>宠物</value>
+  </data>
+  <data name="TypeHousing" xml:space="preserve">
+    <value>房屋类型！</value>
+  </data>
+  <data name="Adopter" xml:space="preserve">
+    <value>采纳者！</value>
+  </data>
+  <data name="ItIsActive" xml:space="preserve">
+    <value>激活</value>
+  </data>
+  <data name="Rejected" xml:space="preserve">
+    <value>已拒绝</value>
+  </data>
+  <data name="MakeRequest" xml:space="preserve">
+    <value>发出请求</value>
+  </data>
+  <data name="Observations" xml:space="preserve">
+    <value>#观察值</value>
+  </data>
+  <data name="ToRefuse" xml:space="preserve">
+    <value>拒绝！</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>住宅</value>
+  </data>
 </root>

@@ -62,6 +62,56 @@ namespace MyPet.Prism.Helpers
         public static string SelectHousing => Resource.SelectHousing;
         public static string RegisterNewUser => Resource.RegisterNewUser;
         public static string Document => Resource.RegisterNewUser;
+        public static string ChangePassword => Resource.ChangePassword;
+        public static string ThePasswordsDoesNotMatch => Resource.ThePasswordsDoesNotMatch;
+
+        public static string UserUpdatedSuccesfully => Resource.UserUpdatedSuccesfully;
+        public static string Ok => Resource.Ok;
+        public static string RequestAdoption => Resource.RequestAdoption;
+        public static string Requests => Resource.Requests;
+        public static string History => Resource.History;
+        public static string SuccessfullyAccepted => Resource.SuccessfullyAccepted;
+        public static string CurrentPassword => Resource.CurrentPassword;
+        public static string NewPassword => Resource.NewPassword;
+        public static string RememberMeInThisDevice => Resource.RememberMeInThisDevice;
+        public static string Firstname => Resource.Firstname;
+        public static string Lastame => Resource.Lastname;
+        public static string Address => Resource.Address;
+        public static string Phone => Resource.Phone;
+        public static string RegisterAs => Resource.RegisterAs;
+        public static string PasswordConfirm => Resource.PasswordConfirm;
+        public static string SelectRole => Resource.SelectRole;
+        public static string Race => Resource.Race;
+        public static string Age => Resource.Age;
+        public static string Name => Resource.Name;
+        public static string PetType => Resource.PetType;
+        public static string IsAvailable => Resource.IsAvailable;
+        public static string Description => Resource.Description;
+        public static string Save => Resource.Save;
+        public static string ChangeImage => Resource.ChangeImage;
+        public static string Date => Resource.Date;
+        public static string Children => Resource.Children;
+        public static string HasPets => Resource.HasPets;
+        public static string TypeHousing => Resource.TypeHousing;
+        public static string Adopter => Resource.Adopter;
+        public static string ItIsActive => Resource.ItIsActive;
+        public static string Rejected => Resource.Rejected;
+
+        public static string MakeRequest => Resource.MakeRequest;
+        public static string Observations => Resource.Observations;
+        public static string ToRefuse => Resource.ToRefuse;
+        public static string Home => Resource.Home;
+        
+
+
+
+
+
+
+
+
+
+
 
 
 

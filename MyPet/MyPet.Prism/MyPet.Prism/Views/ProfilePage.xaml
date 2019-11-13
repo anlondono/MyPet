@@ -3,6 +3,7 @@
     x:Class="MyPet.Prism.Views.ProfilePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:i18n="clr-namespace:MyPet.Prism.Helpers"
     xmlns:prism="http://prismlibrary.com"
     Title="{Binding Title}"
     prism:ViewModelLocator.AutowireViewModel="True"
@@ -24,66 +25,66 @@
                     <Label
                         Grid.Row="0"
                         Grid.Column="0"
-                        Text="Document"
+                        Text="{i18n:Translate Document}"
                         VerticalOptions="Center"
                         />
                     <Entry
                         Grid.Row="0"
                         Grid.Column="1"
-                        Placeholder="Enter your document..."
+                        Placeholder="{i18n:Translate EnteraDocument}"
                         Text="{Binding Owner.Document}"
                         />
 
                     <Label
                         Grid.Row="1"
                         Grid.Column="0"
-                        Text="Firstname"
+                        Text="{i18n:Translate Firstname}"
                         VerticalOptions="Center"
                         />
                     <Entry
                         Grid.Row="1"
                         Grid.Column="1"
-                        Placeholder="Enter your firstname..."
+                        Placeholder="{i18n:Translate EnteraName}"
                         Text="{Binding Owner.FirstName}"
                         />
 
                     <Label
                         Grid.Row="2"
                         Grid.Column="0"
-                        Text="Lastname"
+                        Text="{i18n:Translate Lastname}"
                         VerticalOptions="Center"
                         />
                     <Entry
                         Grid.Row="2"
                         Grid.Column="1"
-                        Placeholder="Enter your lastname..."
+                        Placeholder="{i18n:Translate EnterLastName}"
                         Text="{Binding Owner.LastName}"
                         />
 
                     <Label
                         Grid.Row="3"
                         Grid.Column="0"
-                        Text="Address"
+                        Text="{i18n:Translate Address}"
                         VerticalOptions="Center"
                         />
                     <Entry
                         Grid.Row="3"
                         Grid.Column="1"
-                        Placeholder="Enter your address..."
+                        Placeholder="{i18n:Translate EnterAddress}"
                         Text="{Binding Owner.Address}"
                         />
 
                     <Label
                         Grid.Row="4"
                         Grid.Column="0"
-                        Text="Phone"
+                        Text="{i18n:Translate Phone}"
                         VerticalOptions="Center"
                         />
                     <Entry
                         Grid.Row="4"
                         Grid.Column="1"
                         Keyboard="Telephone"
-                        Placeholder="Enter your phonenumber..."
+                        Placeholder="{i18n:Translate EnteraPhonenumber}"
                         Text="{Binding Owner.PhoneNumber}"
                         />
                 </Grid>
@@ -93,7 +94,7 @@
                         Command="{Binding SaveCommand}"
                         HorizontalOptions="FillAndExpand"
                         IsEnabled="{Binding IsEnabled}"
-                        Text="Save"
+                        Text="{i18n:Translate Save}"
                         />
 
                     <Button
@@ -101,7 +102,7 @@
                         HorizontalOptions="FillAndExpand"
                         IsEnabled="{Binding IsEnabled}"
                         Style="{StaticResource secondaryButton}"
-                        Text="Change Password"
+                        Text="{i18n:Translate ChangePassword}"
                         />
                 </StackLayout>
                 <ActivityIndicator IsRunning="{Binding IsRunning}" />

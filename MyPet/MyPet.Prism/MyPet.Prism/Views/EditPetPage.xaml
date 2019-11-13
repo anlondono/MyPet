@@ -4,6 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:i18n="clr-namespace:MyPet.Prism.Helpers"
     xmlns:prism="http://prismlibrary.com"
     Title="{Binding Title}"
     prism:ViewModelLocator.AutowireViewModel="True"
@@ -33,7 +34,7 @@
                         <Label
                             FontSize="Micro"
                             HorizontalOptions="Center"
-                            Text="Cambiar Imagen"
+                            Text="{i18n:Translate ChangeImage}"
                             >
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding ChangeImageCommand}" />
@@ -57,37 +58,37 @@
                             <Label
                                 Grid.Row="0"
                                 Grid.Column="0"
-                                Text=" Name"
+                                Text="{i18n:Translate Name}"
                                 VerticalOptions="Center"
                                 />
                             <Entry
                                 Grid.Row="0"
                                 Grid.Column="1"
-                                Placeholder="NamePlaceHolder}"
+                                Placeholder="{i18n:Translate EnteraName}"
                                 Text="{Binding Pet.Name}"
                                 />
 
                             <Label
                                 Grid.Row="1"
                                 Grid.Column="0"
-                                Text="Race}"
+                                Text="{i18n:Translate Race}"
                                 VerticalOptions="Center"
                                 />
                             <Entry
                                 Grid.Row="1"
                                 Grid.Column="1"
-                                Placeholder="RacePlaceHolder}"
+                                Placeholder="{i18n:Translate Race}"
                                 Text="{Binding Pet.Race}"
                                 />
 
                             <Label
                                 Grid.Row="2"
                                 Grid.Column="0"
-                                Text="PetType}"
+                                Text="{i18n:Translate PetType}"
                                 VerticalOptions="Center"
                                 />
                             <Picker
-                                Title=" PetTypePlaceHolder}"
+                                Title="{i18n:Translate PetType}"
                                 Grid.Row="2"
                                 Grid.Column="1"
                                 ItemDisplayBinding="{Binding Name}"
@@ -98,7 +99,7 @@
                             <Label
                                 Grid.Row="3"
                                 Grid.Column="0"
-                                Text="Age}"
+                                Text="{i18n:Translate Age}"
                                 VerticalOptions="Center"
                                 />
 
@@ -113,7 +114,7 @@
                             <Label
                                 Grid.Row="4"
                                 Grid.Column="0"
-                                Text="Is Available}"
+                                Text="{i18n:Translate IsAvailable}"
                                 VerticalOptions="Center"
                                 />
 
@@ -126,7 +127,7 @@
                             <Label
                                 Grid.Row="5"
                                 Grid.Column="0"
-                                Text=" Description}"
+                                Text="{i18n:Translate Description}"
                                 VerticalOptions="Center"
                                 />
                             <Editor
@@ -144,7 +145,7 @@
                 <Button
                     Command="{Binding SaveCommand}"
                     IsEnabled="{Binding IsEnabled}"
-                    Text=" Save}"
+                    Text="{i18n:Translate Save}"
                     />
             </StackLayout>
         </StackLayout>

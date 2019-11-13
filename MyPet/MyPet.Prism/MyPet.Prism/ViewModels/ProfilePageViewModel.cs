@@ -1,6 +1,7 @@
 ﻿using MyPet.Common.Helpers;
 using MyPet.Common.Models;
 using MyPet.Common.Services;
+using MyPet.Prism.Helpers;
 using Newtonsoft.Json;
 using Prism.Commands;
 using Prism.Navigation;
@@ -25,7 +26,7 @@ namespace MyPet.Prism.ViewModels
         {
             _navigationService = navigationService;
             _apiService = apiService;
-            Title = "Modify Profile";
+            Title = Languages.ModifyProfile;
             IsEnabled = true;
             Owner = JsonConvert.DeserializeObject<TemporaryOwnerResponse>(Settings.Owner);
         }
@@ -93,43 +94,51 @@ namespace MyPet.Prism.ViewModels
             if (!response.IsSuccess)
             {
                 await App.Current.MainPage.DisplayAlert(
-                    "Error",
+                    Languages.Error,
                     response.Message,
-                    "Accept");
+                    Languages.Accept);
                 return;
             }
 
             Settings.Owner = JsonConvert.SerializeObject(Owner);
 
             await App.Current.MainPage.DisplayAlert(
-                "Ok",
-                "User updated succesfully.",
-                "Accept");
+                Languages.Ok,
+                Languages.UserUpdatedSuccesfully,
+                Languages.Accept);
         }
 
         private async Task<bool> ValidateData()
         {
             if (string.IsNullOrEmpty(Owner.Document))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "You must enter a document.", "Accept");
+                await App.Current.MainPage.DisplayAlert(Languages.Error,
+                    Languages.EnteraDocument,
+                    Languages.Accept);
                 return false;
             }
 
             if (string.IsNullOrEmpty(Owner.FirstName))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "You must enter a FirstName.", "Accept");
+                await App.Current.MainPage.DisplayAlert(Languages.Error,
+                    Languages.EnteraName,
+                    Languages.Accept);
                 return false;
             }
 
             if (string.IsNullOrEmpty(Owner.LastName))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "You must enter a LastName.", "Accept");
+                await App.Current.MainPage.DisplayAlert(Languages.Error,
+                    Languages.EnterLastName,
+                    Languages.Accept);
                 return false;
             }
 
             if (string.IsNullOrEmpty(Owner.Address))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "You must enter an Address.", "Accept");
+                await App.Current.MainPage.DisplayAlert(Languages.Error, 
+                    Languages.EnteraName, 
+                    Languages.Accept);
                 return false;
             }
 

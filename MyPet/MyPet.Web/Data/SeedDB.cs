@@ -26,10 +26,21 @@ namespace MyPet.Web.Data
             var manager = await CheckUserAsync("1010", "Juan", "Pruebas", "super@gmail.com", "350 634 2747", "Calle Luna Calle Sol", "Admin");
             var owner = await CheckUserAsync("2020", "Dueño", "Pruebas", "owner@yopmail.com",
                 "350 634 2747", "Calle Luna Calle Sol", "Owner", true, false);
+            var owner2 = await CheckUserAsync("2020", "Andres", "Londono", "andres14l@hotmail.com",
+                "350 634 2747", "Calle 112a #68a71", "Owner", true, false); 
+            var owner3 = await CheckUserAsync("2020", "Juan ", "Zuluaga", "jzuluaga55@gmail.com",
+                "350 634 2747", "Calle luna calle sol", "Owner", true, false);
             var adopter = await CheckUserAsync("3030", "Adoptante", "Pruebas", "adoptante@gmail.com",
                 "350 634 2747", "Calle Luna Calle Sol", "Adopter", false, true);
+            var adopter1 = await CheckUserAsync("3030", "Adopter2", "Pruebas", "adoptante2@gmail.com",
+                "350 634 2747", "Calle Luna Calle Sol", "Adopter", false, true);
             await CheckTemporaryOwner(owner);
+            await CheckAdopter(adopter1);
             await CheckAdopter(adopter);
+            await CheckTemporaryOwner(owner2);
+            await CheckTemporaryOwner(owner3);
+
+
         }
 
         private async Task CheckRoles()
@@ -41,7 +52,7 @@ namespace MyPet.Web.Data
 
         private async Task CheckTemporaryOwner(User user)
         {
-            if (!_context.TemporaryOwners.Any())
+            if (!_context.TemporaryOwners.Any(where=> where.User.Id == user.Id))
             {
                 _context.TemporaryOwners.Add(new TemporaryOwner { User = user });
                 await _context.SaveChangesAsync();
@@ -50,7 +61,7 @@ namespace MyPet.Web.Data
 
         private async Task CheckAdopter(User user)
         {
-            if (!_context.Adopters.Any())
+            if (!_context.Adopters.Any(where => where.User.Id == user.Id))
             {
                 _context.Adopters.Add(new Adopter { User = user });
                 await _context.SaveChangesAsync();

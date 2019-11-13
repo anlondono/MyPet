@@ -249,4 +249,115 @@
   <data name="Document" xml:space="preserve">
     <value>Document</value>
   </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Modifier le mot de passe</value>
+  </data>
+  <data name="ThePasswordsDoesNotMatch" xml:space="preserve">
+    <value>Le nouveau mot de passe et la confirmation ne correspond pas!</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="UserUpdatedSuccesfully" xml:space="preserve">
+    <value>Mise à jour</value>
+  </data>
+  <data name="RequestAdoption" xml:space="preserve">
+    <value>Demander l&amp;#39;adoption!</value>
+  </data>
+  <data name="Requests" xml:space="preserve">
+    <value>Demandes</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>Historique</value>
+  </data>
+  <data name="SuccessfullyAccepted" xml:space="preserve">
+    <value>Accepté avec succès!</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Mot de passe actuel</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>&amp;Nouveau mot de passe :</value>
+  </data>
+  <data name="RememberMeInThisDevice" xml:space="preserve">
+    <value>Se souvenir de moi dans cet appareil!</value>
+  </data>
+  <data name="Firstname" xml:space="preserve">
+    <value>Prénom</value>
+  </data>
+  <data name="Lastname" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Téléphone</value>
+  </data>
+  <data name="RegisterAs" xml:space="preserve">
+    <value>S'inscrire en tant que</value>
+  </data>
+  <data name="SelectRole" xml:space="preserve">
+    <value>Sélectionner un rôle</value>
+  </data>
+  <data name="PasswordConfirm" xml:space="preserve">
+    <value>Confirmer le mot de passe</value>
+  </data>
+  <data name="Race" xml:space="preserve">
+    <value>Course</value>
+  </data>
+  <data name="Age" xml:space="preserve">
+    <value>Âge</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="PetType" xml:space="preserve">
+    <value>Type d&amp;#39;animal!</value>
+  </data>
+  <data name="IsAvailable" xml:space="preserve">
+    <value>est disponible.</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description :</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Enregistrer</value>
+  </data>
+  <data name="ChangeImage" xml:space="preserve">
+    <value>Modification de l’image</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date :</value>
+  </data>
+  <data name="Children" xml:space="preserve">
+    <value>A des enfants</value>
+  </data>
+  <data name="HasPets" xml:space="preserve">
+    <value>A des animaux domestiques?!</value>
+  </data>
+  <data name="TypeHousing" xml:space="preserve">
+    <value>Type de logement</value>
+  </data>
+  <data name="Adopter" xml:space="preserve">
+    <value>Adopter!</value>
+  </data>
+  <data name="ItIsActive" xml:space="preserve">
+    <value>Est actif</value>
+  </data>
+  <data name="Rejected" xml:space="preserve">
+    <value>Rejeté</value>
+  </data>
+  <data name="MakeRequest" xml:space="preserve">
+    <value>Créer une demande</value>
+  </data>
+  <data name="Observations" xml:space="preserve">
+    <value>observations</value>
+  </data>
+  <data name="ToRefuse" xml:space="preserve">
+    <value>la refuser ?</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Accueil</value>
+  </data>
 </root>

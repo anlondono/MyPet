@@ -34,7 +34,7 @@
                     Text="{Binding Password}"
                     />
                 <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                    <Label Text="Remember me in this device" VerticalOptions="Center" />
+                    <Label Text="{i18n:Translate RememberMeInThisDevice}" VerticalOptions="Center" />
                     <CheckBox IsChecked="{Binding IsRemember}" />
                 </StackLayout>
                 <Label

@@ -106,7 +106,7 @@ namespace MyPet.Prism.ViewModels
                 return;
             }
 
-            await App.Current.MainPage.DisplayAlert("Ok", response.Message, Languages.Accept);
+            await App.Current.MainPage.DisplayAlert(Languages.Ok, response.Message, Languages.Accept);
             await _navigationService.GoBackAsync();
         }
 

@@ -96,7 +96,7 @@ namespace MyPet.Prism.ViewModels
             if (parameters.ContainsKey("pet"))
             {
                 Pet = parameters.GetValue<PetResponse>("pet");
-                Title = "Solicitar adopción";
+                Title = Languages.RequestAdoption;
             }
             else
             {

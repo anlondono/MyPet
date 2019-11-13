@@ -3,6 +3,7 @@
     x:Class="MyPet.Prism.Views.RegisterRequestPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:i18n="clr-namespace:MyPet.Prism.Helpers"
     xmlns:prism="http://prismlibrary.com"
     Title="{Binding Title}"
     prism:ViewModelLocator.AutowireViewModel="True"
@@ -25,7 +26,7 @@
                         <Label
                             Grid.Row="0"
                             Grid.Column="0"
-                            Text="¿Tiene niños?"
+                            Text="{i18n:Translate Children}"
                             VerticalOptions="Center"
                             />
                         <CheckBox
@@ -37,7 +38,7 @@
                         <Label
                             Grid.Row="1"
                             Grid.Column="0"
-                            Text="¿Tiene mascotas?"
+                            Text="{i18n:Translate HasPets}"
                             VerticalOptions="Center"
                             />
                         <CheckBox
@@ -50,7 +51,7 @@
                         <Label
                             Grid.Row="2"
                             Grid.Column="0"
-                            Text="Tipo de casa"
+                            Text="{i18n:Translate TypeHousing}"
                             VerticalOptions="Center"
                             />
                         <Picker
@@ -64,7 +65,7 @@
                         <Label
                             Grid.Row="3"
                             Grid.Column="0"
-                            Text="Observaciones"
+                            Text="{i18n:Translate Observations}"
                             VerticalOptions="Center"
                             />
                         <Editor
@@ -84,7 +85,7 @@
             <Button
                 Command="{Binding SaveCommand}"
                 IsEnabled="{Binding IsEnabled}"
-                Text=" Save}"
+                Text="{i18n:Translate Save}"
                 />
         </StackLayout>
     </StackLayout>

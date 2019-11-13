@@ -29,7 +29,7 @@ namespace MyPet.Prism.ViewModels
             _navigationService = navigationService;
             _apiService = apiService;
 
-            Title = "Login";
+            Title = Languages.Login;
             IsEnabled = true;
             IsRemember = true;
         }

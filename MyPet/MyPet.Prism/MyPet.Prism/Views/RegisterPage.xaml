@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
+﻿<ContentPage
     x:Class="MyPet.Prism.Views.RegisterPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -32,85 +31,85 @@
                     <Entry
                         Grid.Row="0"
                         Grid.Column="1"
-                        Placeholder="Enter your document number..."
+                        Placeholder="{i18n:Translate EnteraDocument}"
                         Text="{Binding Document}"
                         />
 
                     <Label
                         Grid.Row="1"
                         Grid.Column="0"
-                        Text="Firstname"
+                        Text="{i18n:Translate Firstname}"
                         VerticalOptions="Center"
                         />
                     <Entry
                         Grid.Row="1"
                         Grid.Column="1"
-                        Placeholder="Enter your first name..."
+                        Placeholder="{i18n:Translate EnteraName}"
                         Text="{Binding FirstName}"
                         />
 
                     <Label
                         Grid.Row="2"
                         Grid.Column="0"
-                        Text="Lastname"
+                        Text="{i18n:Translate Lastname}"
                         VerticalOptions="Center"
                         />
                     <Entry
                         Grid.Row="2"
                         Grid.Column="1"
-                        Placeholder="Enter your last name..."
+                        Placeholder="{i18n:Translate EnterLastName}"
                         Text="{Binding LastName}"
                         />
 
                     <Label
                         Grid.Row="3"
                         Grid.Column="0"
-                        Text="Address"
+                        Text="{i18n:Translate Address}"
                         VerticalOptions="Center"
                         />
                     <Entry
                         Grid.Row="3"
                         Grid.Column="1"
-                        Placeholder="Enter your address..."
+                        Placeholder="{i18n:Translate EnterAddress}"
                         Text="{Binding Address}"
                         />
 
                     <Label
                         Grid.Row="4"
                         Grid.Column="0"
-                        Text="Email"
+                        Text="{i18n:Translate Email}"
                         VerticalOptions="Center"
                         />
                     <Entry
                         Grid.Row="4"
                         Grid.Column="1"
                         Keyboard="Email"
-                        Placeholder="Enter your email..."
+                        Placeholder="{i18n:Translate EnteranEmail}"
                         Text="{Binding Email}"
                         />
 
                     <Label
                         Grid.Row="5"
                         Grid.Column="0"
-                        Text="Phone"
+                        Text="{i18n:Translate Phone}"
                         VerticalOptions="Center"
                         />
                     <Entry
                         Grid.Row="5"
                         Grid.Column="1"
-                        Keyboard="Telephone"
-                        Placeholder="Enter your phone number..."
+                        Keyboard="Phone"
+                        Placeholder="{i18n:Translate EnteraPhonenumber}"
                         Text="{Binding Phone}"
                         />
 
                     <Label
                         Grid.Row="6"
                         Grid.Column="0"
-                        Text="Register as"
+                        Text="{i18n:Translate RegisterAs}"
                         VerticalOptions="Center"
                         />
                     <Picker
-                        Title="Select a role..."
+                        Title="{i18n:Translate SelectRole}"
                         Grid.Row="6"
                         Grid.Column="1"
                         ItemDisplayBinding="{Binding Name}"
@@ -121,35 +120,35 @@
                     <Label
                         Grid.Row="7"
                         Grid.Column="0"
-                        Text="Password"
+                        Text="{i18n:Translate Password}"
                         VerticalOptions="Center"
                         />
                     <Entry
                         Grid.Row="7"
                         Grid.Column="1"
                         IsPassword="True"
-                        Placeholder="Enter your password"
+                        Placeholder="{i18n:Translate EnteraPassword}"
                         Text="{Binding Password}"
                         />
 
                     <Label
                         Grid.Row="8"
                         Grid.Column="0"
-                        Text="Password Confirm"
+                        Text="{i18n:Translate PasswordConfirm}"
                         VerticalOptions="Center"
                         />
                     <Entry
                         Grid.Row="8"
                         Grid.Column="1"
                         IsPassword="True"
-                        Placeholder="Enter the password confirm..."
+                        Placeholder="{i18n:Translate EnteraPasswordConfirm}"
                         Text="{Binding PasswordConfirm}"
                         />
                 </Grid>
                 <Button
                     Command="{Binding RegisterCommand}"
                     IsEnabled="{Binding IsEnabled}"
-                    Text="Register"
+                    Text="{i18n:Translate Register}"
                     VerticalOptions="EndAndExpand"
                     />
                 <ActivityIndicator IsRunning="{Binding IsRunning}" />

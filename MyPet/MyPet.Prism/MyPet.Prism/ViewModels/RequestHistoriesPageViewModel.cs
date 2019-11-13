@@ -1,6 +1,7 @@
 ﻿using MyPet.Common.Helpers;
 using MyPet.Common.Models;
 using MyPet.Common.Services;
+using MyPet.Prism.Helpers;
 using Newtonsoft.Json;
 using Prism.Navigation;
 using System.Collections.Generic;
@@ -25,7 +26,7 @@ namespace MyPet.Prism.ViewModels
             _apiService = apiService;
             Pet = JsonConvert.DeserializeObject<PetResponse>(Settings.Pet);
             _owner = JsonConvert.DeserializeObject<TemporaryOwnerResponse>(Settings.Owner);
-            Title = "Solicitudes";
+            Title = Languages.Requests;
             LoadHistories();
         }
         public ObservableCollection<HistoryItemViewModel> Histories
